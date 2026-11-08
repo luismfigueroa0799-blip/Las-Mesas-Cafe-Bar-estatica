@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Las Mesas | Café & Bar</title>
+<meta name="description" content="Las Mesas Café & Bar en Las Palmas de Gran Canaria. Hamburguesas, pizzas, bocadillos y platos combinados. Abierto de lunes a sábado de 18:00 a 23:00, sábados también de 12:00 a 15:00, y domingos de 12:00 a 17:00.">
+<meta property="og:title" content="Las Mesas | Café & Bar">
+<meta property="og:description" content="Café, copas y experiencias con alma. Reserva tu mesa.">
+<meta property="og:image" content="https://lasmesasbarcafet.com/imag/logo.jpg">
+<meta property="og:url" content="https://lasmesasbarcafet.com/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#15120e">
+<link rel="canonical" href="https://lasmesasbarcafet.com/">
+<link rel="icon" type="image/webp" href="imag/logo-small.webp" sizes="56x56">
+<link rel="preload" as="image" href="imag/hero-896.webp" imagesrcset="imag/hero-640.webp 640w, imag/hero-896.webp 896w" imagesizes="100vw" fetchpriority="high">
+<script>
+// MODO NAVIDAD: se activa solo entre estas fechas (hora de Canarias) y se apaga solo después.
+// Para probarlo: añade ?navidad=1 a la dirección (o ?navidad=0 para verlo apagado).
+(function(){
+  var DESDE="2026-11-20", HASTA="2027-01-07";
+  try{
+    var q=new URLSearchParams(location.search).get("navidad");
+    var hoy=new Intl.DateTimeFormat("en-CA",{timeZone:"Atlantic/Canary",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+    var on=q==="1"?true:q==="0"?false:(hoy>=DESDE&&hoy<=HASTA);
+    if(!on) return;
+    document.documentElement.classList.add("navidad");
+    window.NAVIDAD={hoy:hoy};
+    var ic=document.querySelector('link[rel="icon"]');
+    if(ic){ic.type="image/svg+xml";ic.removeAttribute("sizes");ic.href="data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="#15120e"/><circle cx="32" cy="32" r="29" fill="none" stroke="#d4aa58" stroke-width="3"/><path d="M32 12l5.600 12.400 13.400 1.400-10 9 2.900 13.200L32 41.200 20.100 48l2.900-13.200-10-9 13.400-1.400z" fill="#d4aa58"/></svg>');}
+    var tc=document.querySelector('meta[name="theme-color"]'); if(tc) tc.content="#3a0b14";
+  }catch(e){}
+})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Las Mesas Café & Bar","url":"https://lasmesasbarcafet.com/","image":"https://lasmesasbarcafet.com/imag/logo.jpg","priceRange":"€","menu":"https://lasmesasbarcafet.com/#menu","sameAs":["https://www.instagram.com/lasmesascafebar/","https://www.tiktok.com/@lasmesascafebar"],"telephone":"+34928896097","address":{"@type":"PostalAddress","streetAddress":"Pintor Antonio Padrón, 59, Las Mesas Bajas","addressLocality":"Las Palmas de Gran Canaria","addressCountry":"ES"},"openingHours":["Mo-Sa 18:00-23:00","Sa 12:00-15:00","Su 12:00-17:00"]}
+</script>
+<style>
+:root{--petroleo:#15120e;--petroleo-oscuro:#0b0a08;--dorado:#d4aa58;--dorado-claro:#e3c77f;--dorado-oscuro:#8a6a1f;--crema:#f6efe0;--negro:#15120e;--serif:Georgia,"Times New Roman",serif;--sans:Arial,Helvetica,sans-serif;--transicion:.3s ease}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{overflow-x:clip;font-family:var(--sans);background:var(--crema);color:var(--negro);line-height:1.6}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font:inherit}
+:focus-visible{outline:2px solid var(--dorado);outline-offset:3px}
+
+header{position:fixed;top:0;left:0;width:100%;z-index:100;padding:14px 5%;background:var(--petroleo-oscuro);border-bottom:1px solid rgba(212,170,88,.4);transition:var(--transicion)}
+header.scrolled{padding:8px 5%;box-shadow:0 2px 20px rgba(0,0,0,.15)}
+.nav{max-width:1400px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:14px;color:#fff}
+.logo-img{width:56px;height:56px;border-radius:50%;flex:none}
+.logo-text{font-size:17px;font-weight:600;letter-spacing:7px}
+.nav-links{display:flex;gap:35px;align-items:center}
+.nav-links a{color:#fff;font-size:13px;letter-spacing:2px;text-transform:uppercase;transition:var(--transicion)}
+.nav-links a:hover{color:var(--dorado-claro)}
+.menu-toggle{display:none;border:0;background:transparent;color:#fff;font-size:32px;cursor:pointer}
+
+.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:120px 5% 70px;color:var(--negro);background:radial-gradient(circle at 78% 35%,rgba(212,170,88,.28),transparent 55%),var(--crema)}
+.hero-inner{width:min(1200px,100%);margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.hero-logo img{width:min(430px,100%);height:auto;aspect-ratio:1/1;margin:0 auto;border-radius:50%;box-shadow:0 25px 60px rgba(21,18,14,.35);transform:translate(clamp(28px,calc((100vw - 1100px)*.4),120px),-20px)}
+.hero-content{position:relative;z-index:2}
+.eyebrow{display:flex;align-items:center;gap:20px;color:var(--dorado-oscuro);font-size:13px;font-weight:bold;letter-spacing:4px;text-transform:uppercase;margin-bottom:45px}
+.eyebrow::before{content:"";width:70px;height:2px;background:var(--dorado-oscuro)}
+.hero h1{max-width:750px;font-family:var(--serif);font-size:clamp(58px,8vw,110px);line-height:.9;font-weight:400;letter-spacing:-4px;margin-bottom:35px}
+.hero h1 span{color:var(--dorado-oscuro);font-style:italic}
+.hero-description{max-width:570px;color:#4a4640;font-size:clamp(17px,2vw,22px);margin-bottom:40px}
+.hero-description p+p{margin-top:8px}
+.hero-hours{display:grid;gap:12px;justify-items:start;margin:-10px 0 34px}
+.quick-status{display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border-radius:999px;background:#e3f3e8;color:#145c2e;font-size:14px;font-weight:bold;letter-spacing:.3px}
+.quick-status[hidden]{display:none}
+.quick-dot{width:10px;height:10px;border-radius:50%;background:#16803c;box-shadow:0 0 0 4px rgba(22,128,60,.18);flex:none}
+.quick-status.cerrado{background:#fbe6e6;color:#8f1d1d}
+.quick-status.cerrado .quick-dot{background:#c62828;box-shadow:0 0 0 4px rgba(198,40,40,.16)}
+.hora-nota{margin:-6px 0 14px;font-size:13px;color:#5e6768}
+.hero-schedule{list-style:none;display:flex;flex-wrap:wrap;gap:6px 22px;padding:0;margin:0;font-size:15px;letter-spacing:1px;color:#4a4640}.hero-schedule li{white-space:nowrap}.hero-schedule b{color:#7a5f1f;margin-right:4px}
+.hero-content .hero-hours{animation-delay:.35s}
+@media (max-width:600px){.hero-hours{margin:-6px 0 28px}.hero-schedule{flex-direction:column;gap:4px}}
+.buttons{display:flex;gap:20px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:62px;padding:0 38px;border:1px solid var(--dorado);font-size:13px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;transition:var(--transicion);cursor:pointer}
+.btn-primary{background:var(--dorado);color:var(--negro)}
+.btn-primary:hover{background:var(--dorado-claro);transform:translateY(-3px)}
+.btn-outline{color:var(--negro);border-color:var(--negro)}
+.btn-outline:hover{background:var(--negro);color:var(--dorado-claro);transform:translateY(-3px)}
+
+/* Portada con foto del local */
+.hero{position:relative;isolation:isolate;overflow:hidden;color:#fff;background:#15120e}
+.hero-bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:56% 62%}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(11,10,8,.86) 0%,rgba(11,10,8,.6) 42%,rgba(11,10,8,.14) 100%)}
+.hero-inner{grid-template-columns:minmax(0,1fr)}
+.hero-content{max-width:640px}
+.hero .eyebrow{color:var(--dorado-claro)}
+.hero .eyebrow::before{background:var(--dorado-claro)}
+.hero h1 span{color:var(--dorado-claro)}
+.hero h1,.hero-description{text-shadow:0 2px 18px rgba(0,0,0,.45)}
+.hero .hero-description{color:#f3eddf}
+.hero .hero-schedule{color:#f3eddf}
+.hero .hero-schedule b{color:var(--dorado-claro)}
+.hero .btn-outline{color:#fff;border-color:rgba(255,255,255,.8)}
+.hero .btn-outline:hover{background:#fff;color:var(--negro)}
+@media (max-width:900px){.hero::before{background:linear-gradient(180deg,rgba(11,10,8,.78),rgba(11,10,8,.84))}.hero-bg{object-position:56% 60%}}
+
+/* Novedades y avisos (se rellenan desde la pestaña "Avisos" de la hoja de Google) */
+.avisos-section{padding:90px 5% 80px;background:var(--crema);border-bottom:1px solid rgba(138,106,31,.25)}
+.avisos-section .section-title{font-size:clamp(34px,5vw,54px);margin-bottom:34px}
+.avisos-lista{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px;align-items:start}
+.aviso{width:100%;max-width:760px;justify-self:center;background:#fff;border:1px solid rgba(138,106,31,.3);border-top:4px solid var(--dorado);box-shadow:0 14px 34px rgba(21,18,14,.1);overflow:hidden}
+.aviso-foto{display:block;background:var(--petroleo-oscuro)}
+.aviso-foto img{display:block;width:100%;height:auto;max-height:560px;object-fit:contain;margin:auto}
+.aviso-cuerpo{padding:22px 24px 26px}
+.aviso h3{font-family:var(--serif);font-size:28px;font-weight:400;line-height:1.15;color:var(--petroleo);margin-bottom:10px}
+.aviso p{white-space:pre-line;color:#4a4640}
+.aviso-video{position:relative;display:block;width:100%;aspect-ratio:16/9;margin-top:18px;border:0;padding:0;background:var(--petroleo-oscuro);cursor:pointer;overflow:hidden}
+.aviso-video img,.aviso-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
+.aviso-video-play{position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;background:rgba(11,10,8,.78);border:2px solid var(--dorado)}
+.aviso-video-play::before{content:"";position:absolute;left:27px;top:20px;border-left:20px solid var(--dorado-claro);border-top:13px solid transparent;border-bottom:13px solid transparent}
+.aviso .btn{margin-top:18px;min-height:52px}
+
+section{padding:110px 5%}
+section[id]{scroll-margin-top:100px}
+.container{width:min(1200px,100%);margin:auto}
+.section-label{color:#7a5f1f;font-size:12px;font-weight:bold;letter-spacing:4px;text-transform:uppercase;margin-bottom:15px}
+.section-title{font-family:var(--serif);font-size:clamp(42px,6vw,70px);font-weight:400;line-height:1;color:var(--petroleo)}
+
+.floating-actions{position:fixed;right:22px;bottom:max(22px,env(safe-area-inset-bottom));z-index:90;display:flex;align-items:center;gap:10px;transition:opacity .25s ease,transform .25s ease,visibility .25s ease}
+.floating-hours,.floating-call,.floating-location{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 20px;border:1px solid rgba(255,255,255,.5);border-radius:999px;background:linear-gradient(135deg,var(--dorado-claro),var(--dorado));color:var(--negro);font-size:14px;font-weight:bold;box-shadow:0 10px 28px rgba(0,0,0,.28);transition:transform .2s ease,box-shadow .2s ease}
+.floating-hours span{display:grid;line-height:1.2;text-align:left}
+.floating-hours strong{font-size:13px}
+.floating-hours small{margin-top:3px;font-size:11px;font-weight:normal}
+.floating-hours small.floating-status{display:flex;align-items:center;gap:6px;font-weight:bold}
+.floating-dot{width:8px;height:8px;flex:none;border-radius:50%;background:#777}
+.floating-dot.abierto{background:#16803c;box-shadow:0 0 0 3px rgba(22,128,60,.16)}
+.floating-dot.cerrado{background:#c62828;box-shadow:0 0 0 3px rgba(198,40,40,.14)}
+.floating-hours svg,.floating-call svg,.floating-location svg{width:21px;height:21px;flex:none}
+.floating-call:hover,.floating-location:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,.34)}
+.floating-actions.oculto{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(10px)}
+@media(max-width:600px){.floating-actions{right:16px;bottom:max(16px,env(safe-area-inset-bottom));flex-direction:column;align-items:flex-end;gap:8px}.floating-hours{display:none}.floating-call,.floating-location{min-height:50px;padding:0 17px;font-size:13px}}
+@media(prefers-reduced-motion:reduce){.floating-actions,.floating-hours,.floating-call,.floating-location{transition:none}}
+.intro{background:#fff}
+.intro-grid{max-width:760px}
+.intro-text p{margin-top:30px;color:#5e6768;font-size:18px;line-height:1.8}
+.intro-signature{margin-top:35px;color:#9a7a2e;font-family:var(--serif);font-size:28px;font-style:italic}
+
+.photos-section{background:#f6f2e9}
+.events-section{background:#f6f2e9}
+.events-intro{max-width:640px;margin:22px 0 40px;color:#4a4640;font-size:18px;line-height:1.7}
+.events-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.event-card{padding:30px 26px;border-radius:14px;background:#100f10;color:#fff;box-shadow:0 0 0 1px rgba(255,79,163,.7),0 0 18px rgba(255,79,163,.28)}
+.event-card:nth-child(2){box-shadow:0 0 0 1px rgba(77,166,255,.75),0 0 18px rgba(77,166,255,.28)}
+.event-card svg{width:34px;height:34px;color:#e7cf8f;margin-bottom:18px}
+.event-card h3{font:400 28px var(--serif);margin-bottom:10px}
+.event-card p{color:#d8d2c4;line-height:1.6;font-size:16px}
+.events-contact{margin-top:44px}
+.events-contact>p{margin-bottom:18px;font-size:18px;font-weight:bold;color:var(--petroleo)}
+@media (max-width:800px){.events-grid{grid-template-columns:1fr}}
+.photos-heading{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:34px}
+.photos-heading p{max-width:390px;color:#5e6768}
+.photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.photo-card{position:relative;height:min(66vw,600px);min-height:360px;overflow:hidden;background:#100f10;border-radius:4px;box-shadow:0 18px 40px rgba(21,18,14,.16)}
+.photo-card img{width:100%;height:100%;object-fit:contain;display:block}
+.photo-card:after{content:"";position:absolute;inset:58% 0 0;background:linear-gradient(transparent,rgba(15,18,18,.78));pointer-events:none}
+.photo-caption{position:absolute;z-index:1;left:24px;right:24px;bottom:22px;color:#fff}
+.photo-caption span{display:block;color:var(--dorado-claro);font-size:11px;font-weight:bold;letter-spacing:2px;text-transform:uppercase}
+.photo-caption strong{display:block;margin-top:3px;font:400 28px var(--serif)}
+.photo-carousel{position:relative}
+.photo-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+.photo-track::-webkit-scrollbar{display:none}
+.photo-track .photo-card{flex:0 0 calc((100% - 60px)/3.3);scroll-snap-align:start}
+.photo-nav{position:absolute;top:calc(50% - 22px);width:44px;height:44px;border:0;border-radius:50%;background:#fff;color:#100f10;box-shadow:0 4px 14px rgba(0,0,0,.45);font:28px/1 Arial,sans-serif;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;padding:0 0 4px}
+.photo-nav:hover{background:#d8b252}.photo-nav.prev{left:10px}.photo-nav.next{right:10px}
+.photo-nav[disabled]{opacity:.35;cursor:default}
+.photo-dots{display:flex;justify-content:center;gap:8px;margin-top:18px}
+.photo-dots button{width:12px;height:12px;border-radius:50%;border:0;padding:0;background:#c9bfa9;cursor:pointer}
+.photo-dots button.on{background:#b8902f;transform:scale(1.25)}
+.photo-field{display:grid;gap:10px;margin:4px 0 18px}
+.photo-field-label{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--petroleo);font-weight:bold}
+form .btn.photo-add{min-height:48px;padding:0 22px;border:1px dashed #9a7a2e;background:transparent;color:var(--negro);font-size:12px;width:fit-content}
+form .btn.photo-add:hover{background:#efe3c6;transform:none}
+form .btn.photo-add[disabled]{opacity:.45;cursor:default}
+.photo-previews{display:flex;gap:10px;flex-wrap:wrap}
+.photo-previews:empty{display:none}
+.photo-prev{position:relative;width:84px;height:84px;border-radius:8px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,79,163,.6),0 0 10px rgba(255,79,163,.25)}
+.photo-prev img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-prev button{position:absolute;top:4px;right:4px;width:24px;height:24px;border:0;border-radius:50%;background:#fff;color:#100f10;font:14px/1 Arial,sans-serif;cursor:pointer;padding:0}
+.review-photos{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.review-photo{width:92px;height:92px;padding:0;border:0;border-radius:8px;overflow:hidden;cursor:zoom-in;background:#e6dfd1;box-shadow:0 0 0 1px rgba(255,79,163,.55),0 0 10px rgba(255,79,163,.2)}
+.review-photo img{width:100%;height:100%;object-fit:cover;display:block}
+@media (max-width:600px){form .btn.photo-add{width:100%}}
+.photo-card[data-zoom]{cursor:zoom-in}
+.photo-card[data-zoom]:focus-visible{outline:3px solid #d8b252;outline-offset:2px}
+dialog.photo-lightbox{border:0;padding:0;margin:0;background:rgba(8,6,14,.98);max-width:100vw;max-height:100dvh;width:100%;height:100%;color:#fff}
+dialog.photo-lightbox::backdrop{background:rgba(8,6,14,.98)}
+.lb-inner{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:56px 14px 28px}
+.lb-inner img{max-width:min(94vw,900px);max-height:76dvh;object-fit:contain;border-radius:8px;box-shadow:0 0 0 1.5px #ff4fa3,0 0 34px rgba(255,79,163,.5),0 0 60px rgba(77,166,255,.25)}
+.lb-cap{text-align:center}.lb-cap span{display:block;color:#e7cf8f;font-size:11px;font-weight:bold;letter-spacing:2px;text-transform:uppercase}.lb-cap strong{display:block;margin-top:3px;font:400 24px var(--serif)}
+.lb-btn{position:absolute;width:46px;height:46px;border:0;border-radius:50%;background:#fff;color:#100f10;font:28px/1 Arial,sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0 0 4px;box-shadow:0 4px 14px rgba(0,0,0,.5)}
+.lb-close{top:12px;right:12px;font-size:26px;padding:0}.lb-prev{left:10px;top:50%}.lb-next{right:10px;top:50%}
+@media (max-width:600px){.lb-prev,.lb-next{top:auto;bottom:22px}.lb-prev{left:calc(50% - 60px)}.lb-next{right:calc(50% - 60px)}.lb-inner{padding-bottom:84px}}
+@media (max-width:900px){.photo-track .photo-card{flex-basis:calc((100% - 40px)/3.3);height:auto;min-height:0;aspect-ratio:3/4}}
+@media (min-width:901px){.photo-track{overflow:visible;gap:16px}.photo-track .photo-card{flex:1 1 0;min-width:0;height:auto;min-height:0;aspect-ratio:3/4}.photo-track .photo-caption{left:14px;right:14px;bottom:14px}.photo-track .photo-caption span{font-size:9px;letter-spacing:1.5px}.photo-track .photo-caption strong{font-size:18px;line-height:1.15}.photo-nav,.photo-dots{display:none}}
+@media (max-width:600px){.photo-track{display:grid;grid-template-columns:1fr 1fr;gap:14px;overflow:visible;padding:2px}.photo-track .photo-card{height:auto;min-height:0;aspect-ratio:4/5;min-width:0;border-radius:10px}.photo-track .photo-card img{object-fit:cover}.photo-track .photo-card:nth-child(2){grid-column:1/-1;order:-1;aspect-ratio:5/4;box-shadow:0 0 0 1.5px #ff4fa3,0 0 22px rgba(255,79,163,.55),0 14px 30px rgba(0,0,0,.35)}.photo-track .photo-card:nth-child(odd){box-shadow:0 0 0 1px rgba(255,79,163,.85),0 0 14px rgba(255,79,163,.4)}.photo-track .photo-card:nth-child(even):not(:nth-child(2)){box-shadow:0 0 0 1px rgba(77,166,255,.85),0 0 14px rgba(77,166,255,.4)}.photo-track .photo-caption{left:10px;right:10px;bottom:10px}.photo-track .photo-caption span{font-size:8px;letter-spacing:1px}.photo-track .photo-caption strong{font-size:14px;line-height:1.15}.photo-track .photo-card:nth-child(2) .photo-caption{left:16px;bottom:14px}.photo-track .photo-card:nth-child(2) .photo-caption span{font-size:10px}.photo-track .photo-card:nth-child(2) .photo-caption strong{font-size:22px}.photo-nav,.photo-dots{display:none}}
+
+.menu-section{background:var(--petroleo);color:#fff}
+.menu-section .section-label{color:var(--dorado)}
+.menu-section .section-title{color:#fff}
+.menu-header{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:55px}
+.menu-header p{max-width:400px;color:#bfcaca}
+.carta-tabs{position:relative;display:flex;gap:10px;overflow-x:auto;padding-bottom:12px;margin-bottom:35px;scrollbar-width:thin}
+.chip{display:grid;place-items:center;width:64px;height:64px;flex:none;padding:0;border:1px solid rgba(255,255,255,.18);border-radius:50%;background:rgba(255,255,255,.05);color:#fff;cursor:pointer;transition:transform .2s ease,background .2s ease,border-color .2s ease,box-shadow .2s ease}
+.chip svg{width:30px;height:30px;display:block}
+.chip:hover{border-color:var(--dorado);color:var(--dorado-claro);transform:translateY(-2px)}
+.chip[aria-pressed="true"]{background:linear-gradient(135deg,var(--dorado-claro),var(--dorado));border-color:transparent;color:var(--negro);box-shadow:0 8px 20px rgba(212,170,88,.35)}
+.chip:focus-visible{outline:3px solid var(--dorado-claro);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.cat{margin-bottom:55px}
+.cat h3{font-family:var(--serif);font-size:34px;font-weight:400;color:var(--dorado-claro);padding-bottom:12px;border-bottom:1px solid var(--dorado)}
+.cat-note{margin-top:12px;color:#bfcaca;font-size:14px}
+.cat ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;column-gap:60px}
+.plato{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.plato-foto{width:92px;flex:none;margin:0;text-align:center}.plato-foto img{width:76px;height:76px;margin:0 auto;border:2px solid var(--dorado);border-radius:50%;object-fit:cover;object-position:50% 58%;box-shadow:0 4px 16px rgba(0,0,0,.35)}.plato-foto figcaption{margin-top:5px;color:var(--dorado-claro);font-size:9px;font-weight:bold;line-height:1.2;letter-spacing:.7px;text-transform:uppercase}.plato-detalle{flex:1;min-width:0}
+.plato h4{font-family:var(--serif);font-size:21px;font-weight:400}
+.plato p{color:#bfcaca;font-size:14px;line-height:1.5;margin-top:4px}
+.plato small{display:block;margin-top:6px;color:var(--dorado);font-size:11px;letter-spacing:1px}
+.plato-info{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:7px}
+.plato-info small{display:inline;margin:0}
+.info-allergen{width:30px;height:30px;display:inline-grid;place-items:center;border:1px solid rgba(227,199,127,.75);border-radius:50%;background:transparent;color:var(--dorado-claro);font-size:15px;font-weight:bold;cursor:pointer;flex:none}
+.info-allergen:hover{background:var(--dorado);color:var(--petroleo)}
+.carta-legend{margin-top:20px;padding:22px;border:1px solid rgba(255,255,255,.2);color:#bfcaca;font-size:13px;line-height:1.7}
+.carta-legend p+p{margin-top:8px}
+.carta-legend strong{color:var(--dorado-claro)}
+.allergen-dialog{width:min(520px,calc(100% - 32px));max-height:min(80vh,680px);margin:auto;padding:0;border:1px solid var(--dorado);background:var(--crema);color:var(--negro);box-shadow:0 20px 70px #0008}
+.allergen-dialog::backdrop{background:#0009}
+.allergen-dialog-inner{padding:26px}
+.allergen-dialog h3{font:400 30px var(--serif);margin-bottom:8px}
+.allergen-dialog p,.allergen-dialog li{font-size:14px;line-height:1.65}
+.allergen-dialog ul{padding-left:22px;margin:14px 0}
+.allergen-dialog .allergen-close{min-height:44px;padding:0 20px;border:1px solid var(--petroleo);background:var(--petroleo);color:#fff;cursor:pointer}
+.precio{color:var(--dorado-claro);font-family:var(--serif);font-size:22px;white-space:nowrap}
+.pedido-carrito{position:sticky;top:82px;z-index:5;align-items:center;justify-content:space-between;gap:12px;margin:16px 0;padding:14px 18px;background:#fff;color:#173331;border-radius:12px;box-shadow:0 5px 24px #0003}.pedido-carrito:not([hidden]){display:flex}.pedido-carrito>div:first-child{display:grid;gap:4px}.pedido-carrito button,.plato-add{border:0;border-radius:7px;background:#b99852;color:#fff;padding:10px 14px;font-weight:700;cursor:pointer}.plato-add{margin-left:8px;white-space:nowrap}.plato{flex-wrap:wrap}.carrito-linea{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #ddd}.carrito-linea button{padding:5px 9px}.carrito-total{font-weight:700;padding:12px 0}
+.cat.compacta .plato{padding:10px 0;align-items:center}
+.cat.compacta h4{font-size:18px}
+.cat.compacta .precio{font-size:19px}
+.precio.doble{display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-size:14px;white-space:nowrap}
+.precio.doble b{font-weight:400;font-size:19px}
+.redes{display:flex;gap:12px;flex-wrap:wrap}
+.red{width:46px;height:46px;display:grid;place-items:center;border:1px solid var(--dorado-oscuro);border-radius:50%;color:var(--dorado-oscuro);transition:var(--transicion)}
+.red svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.red:hover{background:var(--dorado);border-color:var(--dorado);color:var(--negro)}
+.redes-bloque{margin-top:30px}
+.redes-bloque strong{display:block;color:var(--petroleo);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+footer .redes-bloque{margin:0 0 20px}
+footer .redes{justify-content:center}
+footer .red{color:var(--dorado);border-color:var(--dorado)}
+[hidden]{display:none!important}
+.carta-acciones{display:flex;gap:15px;flex-wrap:wrap;margin-top:35px}
+.carta-acciones .btn{min-height:52px;color:#fff;border-color:rgba(255,255,255,.7)}
+.carta-acciones .btn:hover{background:#fff;color:var(--petroleo)}
+.experience{background:#ebe5da;text-align:center}
+.experience-content{max-width:850px;margin:auto}
+.experience h2{font-family:var(--serif);font-size:clamp(42px,7vw,75px);font-weight:400;line-height:1.05;color:var(--petroleo)}
+.experience h2 span{color:#9a7a2e;font-style:italic}
+.experience p{max-width:650px;margin:30px auto 0;color:#687070;font-size:18px}
+.reviews-section{background:#fff}
+.reviews-header{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:45px}
+.reviews-summary{color:#667070;text-align:right}.google-review-link{min-height:46px;margin-top:14px;padding:0 20px;font-size:11px;letter-spacing:1px}
+.reviews-summary strong{display:block;color:var(--dorado-oscuro);font-family:var(--serif);font-size:34px;font-weight:400}
+.reviews-stars,.review-stars{color:#a77b22;letter-spacing:3px}
+.reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:start}
+.reviews-list{display:grid;gap:16px}
+.review-card{padding:22px;border:1px solid #e6dfd1;background:#fcfaf6}
+.review-card-head{display:flex;justify-content:space-between;gap:14px;align-items:center}
+.review-card p{margin-top:12px;color:#555d5d;line-height:1.7;white-space:pre-wrap}
+.review-date{display:block;margin-top:12px;color:#858585;font-size:12px}
+.reviews-empty{color:#667070;padding:22px 0}
+.review-form-wrap{padding:28px;background:#f6efe0}
+.review-form-wrap h3{font-family:var(--serif);font-size:30px;font-weight:400;margin-bottom:18px}.google-review-note{margin:-8px 0 18px;color:#555d5d;font-size:14px;line-height:1.6}.google-review-note a{color:var(--dorado-oscuro);font-weight:bold;text-decoration:underline;text-underline-offset:3px}
+#reviewForm{margin-top:18px}
+.rating-field{border:0;padding:0;min-width:0}
+.rating-field legend{display:block;margin-bottom:6px;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--petroleo);font-weight:bold}
+.star-input{display:flex;gap:5px}
+.star{display:grid;place-items:center;min-width:44px;min-height:44px;padding:0;border:0;border-radius:8px;background:transparent;color:#b9b2a5;font-size:34px;line-height:1;cursor:pointer}
+.star:focus-visible{outline:2px solid var(--dorado-oscuro);outline-offset:2px}
+.star.activa{color:#a77b22}
+.review-form-note{font-size:13px;color:#667070}
+.form-feedback{min-height:1.5em;color:#4a4640;font-size:14px;overflow-wrap:anywhere}
+
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
+.contact-info>p{color:#667070;margin-top:25px;font-size:17px}
+.contact-details{margin-top:35px}
+.contact-item{margin-bottom:25px}
+.contact-item strong{display:block;color:var(--petroleo);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px}
+.contact-item span{color:#606868}
+.contact-item a:hover span{color:var(--petroleo);text-decoration:underline}
+
+form{display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+.form-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+label{display:grid;min-width:0;gap:6px;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--petroleo);font-weight:bold}
+input,textarea{width:100%;border:1px solid #d3d0c8;background:#fff;padding:16px;color:var(--negro);font-weight:normal;letter-spacing:0;text-transform:none;transition:var(--transicion)}
+textarea{min-height:120px;resize:vertical}
+input[type=date],input[type=time]{display:block;min-width:0;max-width:100%;height:53px;-webkit-appearance:none;appearance:none;text-align:left;border-radius:0}
+input[type=date]::-webkit-date-and-time-value,input[type=time]::-webkit-date-and-time-value{text-align:left;min-width:0}
+input:focus,textarea:focus{border-color:var(--dorado);box-shadow:0 0 0 3px rgba(212,170,88,.2);outline:none}
+form .btn{width:fit-content;border:0}
+.form-note{font-size:13px;color:#667070}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.cookie-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:130;max-width:560px;padding:18px 20px;background:var(--petroleo-oscuro);color:#fff;border:1px solid var(--dorado);box-shadow:0 14px 40px rgba(0,0,0,.4);font-size:14px;line-height:1.5}
+.cookie-banner p{margin:0 0 14px}
+.cookie-actions{display:flex;gap:10px;flex-wrap:wrap}
+.cookie-btn{min-height:44px;padding:0 20px;border:1px solid var(--dorado);background:transparent;color:#fff;font-size:13px;font-weight:bold;cursor:pointer}
+.cookie-btn.cookie-si{background:var(--dorado);color:var(--negro)}
+.cookie-config{padding:0;border:0;background:none;color:inherit;font-size:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+@media (max-width:600px){.cookie-banner{left:12px;right:12px;bottom:12px}}
+
+footer{padding:35px 5%;background:var(--petroleo-oscuro);color:#aebdbc;text-align:center;font-size:13px}
+footer strong{color:var(--dorado)}
+
+@keyframes aparecer{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.hero-content>*{animation:aparecer .8s ease both}
+.hero-content .eyebrow{animation-delay:.1s}
+.hero-content h1{animation-delay:.2s}
+.hero-description{animation-delay:.3s}
+.buttons{animation-delay:.4s}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+@media (min-width:901px) and (max-width:1100px){.hero-logo img{width:min(400px,100%);transform:translate(28px,-16px)}}
+
+@media (max-width:900px){
+.nav-links{display:none;position:absolute;top:80px;left:5%;right:5%;padding:25px;background:var(--petroleo-oscuro);flex-direction:column;align-items:flex-start;border:1px solid rgba(255,255,255,.1)}
+.nav-links.active{display:flex}
+.nav-links a{color:#fff}
+.nav-links a:hover{color:var(--dorado-claro)}
+.hero-inner{grid-template-columns:1fr;gap:35px}
+.hero-logo{order:-1}
+.hero-logo img{width:min(320px,70vw);transform:none}
+.menu-toggle{display:block}
+.intro-grid,.contact-grid{grid-template-columns:1fr}
+.reviews-grid{grid-template-columns:1fr}
+.photo-grid{gap:16px}
+.photo-card{height:min(62vw,500px);min-height:320px}
+.cat ul{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+header{padding:15px 20px}
+.logo-img{width:46px;height:46px}
+.logo-text{font-size:13px;letter-spacing:4px}
+.hero{min-height:auto;padding:100px 20px 60px}
+.hero-logo img{width:min(240px,66vw)}
+.eyebrow{font-size:10px;letter-spacing:2.5px;margin-bottom:30px}
+.eyebrow::before{width:45px}
+.hero h1{font-size:clamp(55px,16vw,78px);letter-spacing:-3px;line-height:.92}
+.hero-description{font-size:16px}
+.buttons{flex-direction:column}
+.btn{width:100%}
+form .btn{width:100%}
+section{padding:75px 20px}
+.photos-heading{display:block}
+.photos-heading p{margin-top:14px}
+.photo-grid{grid-template-columns:minmax(0,1fr);gap:18px}
+.photo-card{height:min(118vw,480px);min-height:0}
+.photo-caption{left:18px;right:18px;bottom:17px}
+.photo-caption strong{font-size:24px}
+.intro-grid{gap:50px}
+.menu-header{display:block}
+.menu-header p{margin-top:20px}
+.cat ul{grid-template-columns:1fr}
+.cat h3{font-size:28px}
+.form-row{grid-template-columns:minmax(0,1fr)}
+.contact-grid{gap:50px}
+.reviews-header{display:block}
+.reviews-summary{text-align:left;margin-top:20px}
+}
+.local-section{background:#f6f2e9}
+.local-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:center}
+.local-text p{margin-top:24px;color:#4a4640;font-size:18px;line-height:1.7}
+.local-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.local-photo{padding:0;border:0;background:#100f10;border-radius:10px;overflow:hidden;cursor:zoom-in;aspect-ratio:3/4;box-shadow:0 18px 40px rgba(21,18,14,.16)}
+.local-photo:focus-visible{outline:3px solid #d8b252;outline-offset:2px}
+.local-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.local-photo:nth-child(2){margin-top:34px}
+dialog.local-lb{border:0;padding:0;margin:0;background:rgba(8,6,14,.98);max-width:100vw;max-height:100dvh;width:100%;height:100%}
+dialog.local-lb::backdrop{background:rgba(8,6,14,.98)}
+dialog.local-lb .lb-inner{height:100%;display:flex;align-items:center;justify-content:center;padding:56px 14px 28px}
+dialog.local-lb img{max-width:min(94vw,900px);max-height:84dvh;object-fit:contain;border-radius:8px}
+@media (max-width:800px){.local-grid{grid-template-columns:1fr;gap:34px}.local-photo:nth-child(2){margin-top:0}.local-photos{gap:12px}}
+
+/* ===== Modo Navidad (solo con html.navidad; se activa y apaga por fecha) ===== */
+.nv-tag,.nv-banner,.nv-nota,.nv-luces,.nv-nieve{display:none}
+html.navidad{--nv-rojo:#cc1f26;--nv-rojo-osc:#7d0f17;--nv-verde:#14402c}
+html.navidad header{border-bottom-color:var(--dorado)}
+html.navidad .hero::before{background:linear-gradient(90deg,rgba(58,11,20,.9) 0%,rgba(40,10,16,.64) 42%,rgba(11,10,8,.14) 100%)}
+@media (max-width:900px){html.navidad .hero::before{background:linear-gradient(180deg,rgba(58,11,20,.8),rgba(30,8,12,.9))}}
+html.navidad .hero h1 span,html.navidad .hero .eyebrow{color:var(--dorado-claro)}
+html.navidad .btn-primary{background:linear-gradient(135deg,#e02a2f,var(--nv-rojo));border-color:var(--dorado);color:#fff}
+html.navidad .btn-primary:hover{background:linear-gradient(135deg,#ee3a3f,#e02a2f)}
+html.navidad .chip{border-color:rgba(212,170,88,.7)}
+html.navidad .chip[aria-pressed="true"]{background:linear-gradient(135deg,var(--nv-rojo),var(--nv-rojo-osc));color:#fff}
+html.navidad .star.activa{color:var(--dorado)}
+html.navidad .floating-call,html.navidad .floating-location,html.navidad .floating-hours{background:linear-gradient(135deg,#e02a2f,var(--nv-rojo-osc));color:#fff}
+html.navidad .nv-tag{display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;padding:7px 16px;border:1px solid var(--dorado);border-radius:999px;background:rgba(21,18,14,.55);color:var(--dorado-claro);font-size:13px;font-weight:bold;letter-spacing:2px;text-transform:uppercase}
+html.navidad .nv-banner{display:block;position:relative;overflow:hidden;padding:34px 5%;background:linear-gradient(135deg,var(--nv-rojo-osc),var(--nv-rojo) 60%,#1d2e22);color:#fff;border-bottom:3px solid var(--dorado)}
+.nv-inner{width:min(1200px,100%);margin:auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:22px}
+.nv-banner h2{font:400 clamp(26px,4vw,42px)/1.1 var(--serif)}
+.nv-banner p{margin-top:4px;color:#f6e3c4}
+.nv-banner .buttons{gap:14px}
+html.navidad .nv-banner .btn-primary{background:var(--dorado);color:var(--negro)}
+html.navidad .nv-banner .btn-outline{color:#fff;border-color:rgba(255,255,255,.8)}
+html.navidad .nv-nota{display:block;margin:0 0 18px;font-size:15px;font-weight:bold;color:var(--nv-rojo)}
+html.navidad .nv-nota.form{margin:12px 0 0;font-size:14px}
+html.navidad{--nv-luces:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='34'%3E%3Cpath d='M0 3Q36 26 72 3' fill='none' stroke='%23d4aa58' stroke-opacity='.55' stroke-width='1.5'/%3E%3Ccircle cx='18' cy='15' r='4.5' fill='%23e04b5f'/%3E%3Ccircle cx='36' cy='18' r='4.5' fill='%23ffd76a'/%3E%3Ccircle cx='54' cy='15' r='4.5' fill='%23ffffff'/%3E%3C/svg%3E")}
+html.navidad header::after{content:"";position:absolute;left:0;right:0;top:100%;height:34px;pointer-events:none;background:var(--nv-luces) repeat-x top left;animation:nv-brillo 2.400s ease-in-out infinite alternate}
+@keyframes nv-brillo{from{opacity:.6}to{opacity:1}}
+html.navidad .nv-nieve{display:block;position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.nv-nieve::before,.nv-nieve::after{content:"";position:absolute;left:0;top:-420px;width:100%;height:calc(100% + 420px);will-change:transform}
+.nv-nieve::before{background:radial-gradient(circle at 20px 30px,rgba(255,255,255,.85) 2px,transparent 3px),radial-gradient(circle at 120px 90px,rgba(255,255,255,.7) 2.500px,transparent 3.500px),radial-gradient(circle at 70px 160px,rgba(255,255,255,.6) 1.500px,transparent 2.500px);background-size:200px 200px;animation:nv-caida 16s linear infinite}
+.nv-nieve::after{background:radial-gradient(circle at 40px 20px,rgba(255,255,255,.55) 1.500px,transparent 2.500px),radial-gradient(circle at 90px 70px,rgba(255,255,255,.45) 1px,transparent 2px);background-size:100px 100px;animation:nv-caida 10s linear infinite}
+@keyframes nv-caida{to{transform:translateY(400px)}}
+@media(prefers-reduced-motion:reduce){html.navidad header::after,html.navidad footer::before,.nv-nieve::before,.nv-nieve::after{animation:none}}
+/* Navidad en el resto de la web */
+html.navidad main>section:not(.hero){position:relative}
+html.navidad main>section:not(.hero)::before{content:"";position:absolute;z-index:2;left:0;right:0;top:0;height:22px;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='22'%3E%3Cpath d='M0 3H90' stroke='%23d4aa58' stroke-opacity='.6'/%3E%3Cpath d='M45 4c-9 0-16 4-22 10 8 2 16-1 22-10zM45 4c9 0 16 4 22 10-8 2-16-1-22-10z' fill='%2314402c'/%3E%3Ccircle cx='42' cy='8' r='3' fill='%23d8232a'/%3E%3Ccircle cx='48' cy='8' r='3' fill='%23d8232a'/%3E%3Ccircle cx='45' cy='12' r='3' fill='%23d8232a'/%3E%3C/svg%3E") repeat-x center top}
+html.navidad .section-label::before{content:"★";margin-right:8px;color:var(--nv-rojo)}
+html.navidad .menu-section .section-label::before{color:var(--dorado)}
+html.navidad .intro-signature,html.navidad .experience h2 span{color:var(--nv-rojo)}
+html.navidad .experience{background:linear-gradient(180deg,#f1e3dd,#ebe5da)}
+html.navidad .local-photo,html.navidad .photo-card{position:relative;box-shadow:0 0 0 2px var(--dorado),0 0 0 5px var(--nv-rojo-osc),0 18px 40px rgba(21,18,14,.2)}
+html.navidad .photo-card::before{content:"★";position:absolute;top:10px;right:10px;z-index:2;width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--nv-rojo);color:var(--dorado-claro);font-size:16px;pointer-events:none}
+html.navidad .menu-section{background:radial-gradient(ellipse at 15% 0,#3d0c17 0,#15120e 55%,#0f1a14 100%)}
+html.navidad .cat h3{position:relative;border-bottom:0;padding-bottom:18px}
+html.navidad .cat h3::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--nv-rojo),var(--dorado) 45%,var(--nv-verde))}
+html.navidad .plato{transition:background .25s ease,box-shadow .25s ease}
+html.navidad .plato:hover{background:linear-gradient(90deg,rgba(204,31,38,.24),transparent);box-shadow:inset 3px 0 var(--dorado)}
+html.navidad .plato h4::before{content:"✦";margin-right:8px;color:var(--dorado);opacity:.6;font-size:14px}
+html.navidad .plato-foto img{box-shadow:0 0 0 3px var(--nv-rojo)}
+html.navidad .event-card{border-top:4px solid var(--nv-rojo);box-shadow:0 0 0 1px rgba(212,170,88,.8),0 12px 28px rgba(21,18,14,.22)}
+html.navidad .review-card{position:relative;border-top:3px solid var(--nv-rojo)}
+html.navidad .review-card::after{content:"";position:absolute;top:6px;right:10px;width:44px;height:18px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='18' viewBox='23 3 44 13'%3E%3Cpath d='M45 4c-9 0-16 4-22 10 8 2 16-1 22-10zM45 4c9 0 16 4 22 10-8 2-16-1-22-10z' fill='%2314402c'/%3E%3Ccircle cx='42' cy='8' r='3' fill='%23d8232a'/%3E%3Ccircle cx='48' cy='8' r='3' fill='%23d8232a'/%3E%3Ccircle cx='45' cy='12' r='3' fill='%23d8232a'/%3E%3C/svg%3E") no-repeat;pointer-events:none}
+html.navidad .contact-item strong{color:var(--nv-rojo)}
+html.navidad footer{position:relative;padding-top:54px;background:linear-gradient(180deg,#3d0c17,#15120e);border-top:3px solid var(--dorado)}
+html.navidad footer::before{content:"";position:absolute;left:0;right:0;top:0;height:34px;pointer-events:none;background:var(--nv-luces) repeat-x top left;animation:nv-brillo 2.400s ease-in-out infinite alternate}
+html.navidad .nv-nota.nv-foot{display:block;margin:0 0 14px;color:var(--dorado-claro);font:400 20px var(--serif)}
+/* Gorro de Papá Noel sobre el logo */
+html.navidad .logo{position:relative}
+html.navidad .logo::before{content:"";position:absolute;z-index:2;left:3px;top:-15px;width:44px;height:37px;transform:rotate(-10deg);pointer-events:none;background:var(--nv-gorro) center/contain no-repeat;filter:drop-shadow(0 2px 3px rgba(0,0,0,.45))}
+html.navidad header.scrolled .logo::before{top:-10px}
+/* Más Navidad en la carta */
+html.navidad{--nv-i0:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Cpath d=%22M16 2l4.300 9.200 10 1.200-7.400 6.900 2 9.900L16 24l-8.900 5.200 2-9.900-7.400-6.900 10-1.200z%22 fill=%22%23e7cf8f%22/%3E%3C/svg%3E");--nv-i1:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2219%22 r=%2211%22 fill=%22%23d8232a%22/%3E%3Crect x=%2212%22 y=%226%22 width=%228%22 height=%225%22 rx=%221%22 fill=%22%23d4aa58%22/%3E%3Cpath d=%22M16 6V2%22 stroke=%22%23d4aa58%22 stroke-width=%222%22/%3E%3Cpath d=%22M9 17q7-7 14 0%22 stroke=%22%23fff%22 stroke-opacity=%22.4%22 stroke-width=%222%22 fill=%22none%22/%3E%3C/svg%3E");--nv-i2:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Cpath d=%22M22 30V11a6 6 0 0 0-12 0%22 fill=%22none%22 stroke=%22%23fff%22 stroke-width=%226%22/%3E%3Cpath d=%22M22 30V11a6 6 0 0 0-12 0%22 fill=%22none%22 stroke=%22%23d8232a%22 stroke-width=%226%22 stroke-dasharray=%224 4%22/%3E%3C/svg%3E");--nv-i3:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect x=%224%22 y=%2214%22 width=%2224%22 height=%2216%22 fill=%22%23d8232a%22/%3E%3Crect x=%222%22 y=%229%22 width=%2228%22 height=%226%22 fill=%22%23b01c22%22/%3E%3Crect x=%2214%22 y=%229%22 width=%224%22 height=%2221%22 fill=%22%23f0cf7a%22/%3E%3Cpath d=%22M16 8C9 0 5 7 12 8zM16 8C23 0 27 7 20 8z%22 fill=%22none%22 stroke=%22%23f0cf7a%22 stroke-width=%222.500%22/%3E%3C/svg%3E");--nv-i4:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Cpath d=%22M16 4l8 10h-5l7 9H6l7-9H8z%22 fill=%22%232f7a4d%22/%3E%3Crect x=%2214%22 y=%2223%22 width=%224%22 height=%226%22 fill=%22%237a4a2a%22/%3E%3Cpath d=%22M16 1l1.300 2.700 3 .4-2.200 2 .6 3L16 7.600 13.300 9l.6-3-2.200-2 3-.4z%22 fill=%22%23e7cf8f%22/%3E%3C/svg%3E");--nv-i5:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Cpath d=%22M16 3a2 2 0 0 1 2 2c6 1 8 6 8 12l3 5H3l3-5c0-6 2-11 8-12a2 2 0 0 1 2-2z%22 fill=%22%23d4aa58%22/%3E%3Ccircle cx=%2216%22 cy=%2226%22 r=%223%22 fill=%22%238a6a1f%22/%3E%3C/svg%3E");--nv-i6:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Cpath d=%22M16 17C9 17 4 21 3 27c8 1 13-3 13-10zM16 17c7 0 12 4 13 10-8 1-13-3-13-10z%22 fill=%22%232f7a4d%22/%3E%3Ccircle cx=%2213%22 cy=%2214%22 r=%224%22 fill=%22%23d8232a%22/%3E%3Ccircle cx=%2219%22 cy=%2214%22 r=%224%22 fill=%22%23d8232a%22/%3E%3Ccircle cx=%2216%22 cy=%229%22 r=%224%22 fill=%22%23d8232a%22/%3E%3C/svg%3E");--nv-i7:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Cg stroke=%22%23dfeaf5%22 stroke-width=%222.500%22 stroke-linecap=%22round%22%3E%3Cpath d=%22M16 3v26M5 9.500l22 13M5 22.500l22-13%22/%3E%3Cpath d=%22M12 5l4 3 4-3M12 27l4-3 4 3%22 fill=%22none%22/%3E%3C/g%3E%3C/svg%3E");--nv-gorro:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 34%22%3E%3Cpath d=%22M4 28C6 12 16 4 28 6c4 1 7 4 8 8-5-2-10 0-12 14z%22 fill=%22%23d8232a%22/%3E%3Ccircle cx=%2234%22 cy=%2214%22 r=%225%22 fill=%22%23fff%22/%3E%3Crect x=%222%22 y=%2225%22 width=%2230%22 height=%228%22 rx=%224%22 fill=%22%23fff%22 stroke=%22%23e3dccd%22/%3E%3C/svg%3E");--nv-acebo:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2244%22 height=%2218%22 viewBox=%2223 3 44 13%22%3E%3Cpath d=%22M45 4c-9 0-16 4-22 10 8 2 16-1 22-10zM45 4c9 0 16 4 22 10-8 2-16-1-22-10z%22 fill=%22%2314402c%22/%3E%3Ccircle cx=%2242%22 cy=%228%22 r=%223%22 fill=%22%23d8232a%22/%3E%3Ccircle cx=%2248%22 cy=%228%22 r=%223%22 fill=%22%23d8232a%22/%3E%3Ccircle cx=%2245%22 cy=%2212%22 r=%223%22 fill=%22%23d8232a%22/%3E%3C/svg%3E")}
+html.navidad .cat h3::before{content:"";display:inline-block;width:28px;height:28px;margin-right:12px;vertical-align:-4px;background:center/contain no-repeat}
+html.navidad .cat:nth-child(8n+1) h3::before{background-image:var(--nv-i0)}
+html.navidad .cat:nth-child(8n+2) h3::before{background-image:var(--nv-i1)}
+html.navidad .cat:nth-child(8n+3) h3::before{background-image:var(--nv-i2)}
+html.navidad .cat:nth-child(8n+4) h3::before{background-image:var(--nv-i3)}
+html.navidad .cat:nth-child(8n+5) h3::before{background-image:var(--nv-i4)}
+html.navidad .cat:nth-child(8n+6) h3::before{background-image:var(--nv-i5)}
+html.navidad .cat:nth-child(8n+7) h3::before{background-image:var(--nv-i6)}
+html.navidad .cat:nth-child(8n+8) h3::before{background-image:var(--nv-i7)}
+html.navidad .cat{position:relative}
+html.navidad .cat::after{content:"";position:absolute;left:50%;bottom:-38px;width:44px;height:18px;margin-left:-22px;pointer-events:none;background:var(--nv-acebo) center/contain no-repeat}
+html.navidad .chip{position:relative}
+html.navidad .chip[aria-pressed="true"]::after{content:"";position:absolute;top:1px;right:0;width:26px;height:22px;transform:rotate(14deg);pointer-events:none;background:var(--nv-gorro) center/contain no-repeat}
+html.navidad .plato-foto{position:relative}
+html.navidad .plato-foto::after{content:"";position:absolute;top:-11px;left:50%;margin-left:4px;width:40px;height:34px;transform:rotate(12deg);pointer-events:none;background:var(--nv-gorro) center/contain no-repeat}
+html.navidad .carta-legend{border-color:rgba(212,170,88,.5)}
+html.navidad .menu-section>.container{position:relative;z-index:1}
+html.navidad .menu-section::after{content:"";position:absolute;z-index:0;left:0;right:0;top:0;height:520px;pointer-events:none;background-image:radial-gradient(circle at 20px 30px,rgba(255,255,255,.8) 2px,transparent 3px),radial-gradient(circle at 110px 80px,rgba(255,255,255,.65) 2.500px,transparent 3.500px),radial-gradient(circle at 60px 130px,rgba(255,255,255,.55) 1.500px,transparent 2.500px),radial-gradient(circle at 140px 20px,rgba(255,255,255,.5) 1.500px,transparent 2.500px);background-size:160px 160px;-webkit-mask-image:linear-gradient(#000 45%,transparent);mask-image:linear-gradient(#000 45%,transparent);animation:nv-nieve-carta 9s linear infinite}
+@keyframes nv-nieve-carta{to{background-position:0 160px}}
+@media(prefers-reduced-motion:reduce){html.navidad .menu-section::after{animation:none}}
+/* Bienvenida navideña al abrir la web */
+html.navidad:not(.nv-bienvenida-fin) body{overflow:hidden}
+.nv-bienvenida{position:fixed;inset:0;z-index:1000;display:none;place-items:center;padding:24px;background:radial-gradient(ellipse at center,#3b1720 0%,#170e12 68%,#090809 100%);color:#fff;text-align:center;opacity:1;transition:opacity .8s ease}
+html.navidad:not(.nv-bienvenida-fin) .nv-bienvenida{display:grid}
+.nv-bienvenida[hidden]{display:none!important}
+.nv-bienvenida-inner{width:min(520px,100%)}
+.nv-bienvenida-kicker{color:#e3c77f;font-size:12px;letter-spacing:4px;text-transform:uppercase}
+.nv-regalo{position:relative;width:190px;height:160px;margin:34px auto 26px;animation:nv-regalo-latido 1.1s ease-in-out infinite alternate}
+.nv-regalo-caja{position:absolute;left:25px;right:25px;bottom:0;height:105px;border:2px solid #f0cf7a;border-radius:5px;background:linear-gradient(110deg,#9e1421,#d8232a 55%,#9e1421);box-shadow:0 18px 35px #0008}
+.nv-regalo-caja::before{content:"";position:absolute;left:calc(50% - 10px);top:0;bottom:0;width:20px;background:linear-gradient(90deg,#d4aa58,#f8e4a3,#d4aa58)}
+.nv-regalo-tapa{position:absolute;z-index:2;left:15px;right:15px;bottom:91px;height:27px;border:2px solid #f8e4a3;border-radius:5px;background:linear-gradient(#e32b32,#a51620);transform-origin:12% 100%;transition:transform .85s cubic-bezier(.2,.8,.25,1)}
+.nv-regalo-lazo{position:absolute;z-index:3;left:calc(50% - 40px);bottom:115px;width:80px;height:40px}
+.nv-regalo-lazo::before,.nv-regalo-lazo::after{content:"";position:absolute;top:6px;width:34px;height:24px;border:7px solid #f0cf7a;border-radius:70% 70% 10% 70%}
+.nv-regalo-lazo::before{left:3px;transform:rotate(22deg)}.nv-regalo-lazo::after{right:3px;transform:scaleX(-1) rotate(22deg)}
+.nv-bienvenida h2{font:400 clamp(38px,9vw,62px)/1.05 Georgia,serif;color:#f8e4a3;text-shadow:0 3px 24px #d8232a66;opacity:0;transform:translateY(12px);transition:opacity .65s ease,transform .65s ease}
+.nv-bienvenida p{margin-top:14px;color:#f6efe0;font-size:16px;opacity:0;transition:opacity .65s ease .15s}
+.nv-bienvenida-saltar{margin-top:28px;padding:10px 17px;border:1px solid #d4aa58;border-radius:999px;background:#15120e88;color:#f6efe0;font-size:13px;cursor:pointer}
+.nv-bienvenida.abriendo .nv-regalo-tapa{transform:rotate(-125deg) translate(-10px,-18px)}
+.nv-bienvenida.abriendo h2,.nv-bienvenida.abriendo p{opacity:1;transform:none}
+.nv-bienvenida.cerrando{opacity:0;pointer-events:none}
+@keyframes nv-regalo-latido{from{transform:translateY(0) rotate(-1deg)}to{transform:translateY(-8px) rotate(1deg)}}
+@media(prefers-reduced-motion:reduce){.nv-regalo{animation:none}.nv-regalo-tapa,.nv-bienvenida,.nv-bienvenida h2,.nv-bienvenida p{transition-duration:.01ms!important}}
+/* Papá Noel y cajas de regalo */
+html.navidad{--nv-santa:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 120 132%22 width=%22120%22 height=%22132%22%3E%3Cpath d=%22M20 66C22 30 44 10 72 10c18 0 32 10 38 26-14-4-30 2-34 30z%22 fill=%22%23d8232a%22/%3E%3Cpath d=%22M20 66C24 36 40 16 62 12 46 24 40 44 38 66z%22 fill=%22%23b01c22%22/%3E%3Ccircle cx=%22108%22 cy=%2238%22 r=%2211%22 fill=%22%23fff%22/%3E%3Cellipse cx=%2260%22 cy=%2274%22 rx=%2230%22 ry=%2226%22 fill=%22%23f6c9a0%22/%3E%3Ccircle cx=%2240%22 cy=%2284%22 r=%225.500%22 fill=%22%23f0908a%22 opacity=%22.6%22/%3E%3Ccircle cx=%2280%22 cy=%2284%22 r=%225.500%22 fill=%22%23f0908a%22 opacity=%22.6%22/%3E%3Cpath d=%22M26 80C20 114 40 130 60 130s40-16 34-50c-10 12-22 10-34 10S36 92 26 80z%22 fill=%22%23fff%22 stroke=%22%23e3dccd%22 stroke-width=%222%22/%3E%3Cellipse cx=%2247%22 cy=%2293%22 rx=%2215%22 ry=%227%22 fill=%22%23fff%22 stroke=%22%23e3dccd%22 stroke-width=%222%22 transform=%22rotate(-8 47 93)%22/%3E%3Cellipse cx=%2273%22 cy=%2293%22 rx=%2215%22 ry=%227%22 fill=%22%23fff%22 stroke=%22%23e3dccd%22 stroke-width=%222%22 transform=%22rotate(8 73 93)%22/%3E%3Ccircle cx=%2260%22 cy=%2286%22 r=%226.500%22 fill=%22%23ef9a82%22/%3E%3Ccircle cx=%2248%22 cy=%2275%22 r=%223.200%22 fill=%22%232a1a14%22/%3E%3Ccircle cx=%2272%22 cy=%2275%22 r=%223.200%22 fill=%22%232a1a14%22/%3E%3Crect x=%2212%22 y=%2258%22 width=%2296%22 height=%2220%22 rx=%2210%22 fill=%22%23fff%22 stroke=%22%23e3dccd%22 stroke-width=%222%22/%3E%3C/svg%3E");--nv-regalos:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 230 150%22 width=%22230%22 height=%22150%22%3E%3Crect x=%2220%22 y=%2272%22 width=%2280%22 height=%2270%22 fill=%22%23d8232a%22/%3E%3Crect x=%2214%22 y=%2258%22 width=%2292%22 height=%2218%22 fill=%22%23b01c22%22/%3E%3Crect x=%2254%22 y=%2258%22 width=%2212%22 height=%2284%22 fill=%22%23f0cf7a%22/%3E%3Cpath d=%22M60 56C40 30 30 52 46 54zM60 56C80 30 90 52 74 54z%22 fill=%22none%22 stroke=%22%23f0cf7a%22 stroke-width=%225%22 stroke-linejoin=%22round%22/%3E%3Ccircle cx=%2260%22 cy=%2255%22 r=%226%22 fill=%22%23f0cf7a%22/%3E%3Crect x=%22112%22 y=%2298%22 width=%2262%22 height=%2244%22 fill=%22%2314402c%22/%3E%3Crect x=%22106%22 y=%2287%22 width=%2274%22 height=%2214%22 fill=%22%230e3022%22/%3E%3Crect x=%22138%22 y=%2287%22 width=%2210%22 height=%2255%22 fill=%22%23f0cf7a%22/%3E%3Cpath d=%22M143 85C130 66 122 80 133 84zM143 85C156 66 164 80 153 84z%22 fill=%22none%22 stroke=%22%23f0cf7a%22 stroke-width=%224%22 stroke-linejoin=%22round%22/%3E%3Crect x=%22178%22 y=%22108%22 width=%2246%22 height=%2234%22 fill=%22%23f6efe0%22 stroke=%22%23d4aa58%22 stroke-width=%222%22/%3E%3Crect x=%22176%22 y=%22100%22 width=%2250%22 height=%2210%22 fill=%22%23e9dfc9%22 stroke=%22%23d4aa58%22 stroke-width=%222%22/%3E%3Crect x=%22196%22 y=%22100%22 width=%2210%22 height=%2242%22 fill=%22%23d8232a%22/%3E%3Cpath d=%22M201 98C192 84 186 94 193 97zM201 98C210 84 216 94 209 97z%22 fill=%22none%22 stroke=%22%23d8232a%22 stroke-width=%223.500%22 stroke-linejoin=%22round%22/%3E%3C/svg%3E")}
+html.navidad .nv-inner>div:first-child{position:relative;min-height:82px;padding-left:96px}
+html.navidad .nv-inner>div:first-child::before{content:"";position:absolute;left:0;top:50%;width:80px;height:88px;margin-top:-44px;background:var(--nv-santa) center/contain no-repeat}
+@media (min-width:1000px){
+html.navidad .hero::after{content:"";position:absolute;z-index:1;right:10%;top:440px;width:210px;height:137px;pointer-events:none;background:var(--nv-regalos) center/contain no-repeat}
+html.navidad .nv-luces{display:block;position:absolute;z-index:1;top:104px;right:9%;width:124px;height:136px;pointer-events:none;background:var(--nv-santa) center/contain no-repeat}
+html.navidad .events-section::after{content:"";position:absolute;z-index:1;right:7%;top:14px;width:104px;height:114px;pointer-events:none;background:var(--nv-santa) center/contain no-repeat}
+html.navidad .contact::after{content:"";position:absolute;z-index:1;left:4%;bottom:14px;width:190px;height:124px;pointer-events:none;background:var(--nv-regalos) center/contain no-repeat}
+html.navidad footer::after{content:"";position:absolute;left:5%;bottom:0;width:260px;height:110px;pointer-events:none;background:var(--nv-santa) left bottom/auto 100% no-repeat,var(--nv-regalos) 100px bottom/auto 72% no-repeat}
+}
+@media (max-width:999px){
+html.navidad footer{padding-top:130px}
+html.navidad footer::after{content:"";position:absolute;left:0;right:0;top:40px;height:80px;pointer-events:none;background:var(--nv-regalos) center/auto 100% no-repeat}
+}
+
+.plato-ingrediente{display:none}
+</style>
+</head>
+<body>
+<div class="nv-bienvenida" id="nvBienvenida" role="dialog" aria-modal="true" aria-labelledby="nvBienvenidaTitulo" hidden>
+  <div class="nv-bienvenida-inner">
+    <p class="nv-bienvenida-kicker">Las Mesas · Gran Canaria</p>
+    <div class="nv-regalo" aria-hidden="true"><div class="nv-regalo-caja"></div><div class="nv-regalo-tapa"></div><div class="nv-regalo-lazo"></div></div>
+    <h2 id="nvBienvenidaTitulo">¡Feliz Navidad!</h2>
+    <p>Un regalo de Las Mesas para ti.</p>
+    <button class="nv-bienvenida-saltar" id="nvBienvenidaSaltar" type="button">Entrar en la web</button>
+  </div>
+</div>
+
+<header id="header">
+<nav class="nav">
+<a href="#inicio" class="logo"><img class="logo-img" src="imag/logo-small.webp" alt="Logo de Las Mesas Café Bar" width="56" height="56" decoding="async"><span class="logo-text">LAS MESAS</span></a>
+<div class="nav-links" id="navLinks">
+<a href="#inicio">Inicio</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#menu">Menú</a>
+<a href="#celebraciones">Celebraciones</a>
+<a href="#resenas">Opiniones</a>
+<a href="#contacto">Reservas</a>
+</div>
+<button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">☰</button>
+</nav>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+<img class="hero-bg" src="imag/hero-896.webp" srcset="imag/hero-640.webp 640w, imag/hero-896.webp 896w" sizes="100vw" alt="" width="896" height="1195" fetchpriority="high" decoding="async">
+<div class="nv-luces" aria-hidden="true"></div><div class="nv-nieve" aria-hidden="true"></div>
+<div class="hero-inner">
+<div class="hero-content">
+<p class="nv-tag">★ Navidad en Las Mesas</p>
+<div class="eyebrow">Las Mesas · Gran Canaria</div>
+<h1>Momentos <span>que se</span> comparten.</h1>
+<div class="hero-description">
+<p>Café, copas y experiencias con alma.</p>
+<p>Una mesa para llegar sin prisas.</p>
+</div>
+<div class="hero-hours">
+<p class="quick-status" id="estado-abierto" role="status" aria-live="polite" hidden><i class="quick-dot" aria-hidden="true"></i><span class="quick-status-text"></span></p>
+<ul class="hero-schedule" aria-label="Horario"><li><b>Lun–Vie</b> 18:00–23:00</li><li><b>Sáb</b> 12:00–15:00 · 18:00–23:00</li><li><b>Dom</b> 12:00–17:00</li></ul>
+<p class="aviso-festivo" id="aviso-festivo" role="status" hidden style="margin:0;padding:8px 14px;border-left:3px solid var(--dorado-claro);background:rgba(212,170,88,.16);color:#f3eddf;font-size:15px;font-weight:bold"></p>
+</div>
+<div class="buttons">
+<a href="#contacto" class="btn btn-primary">Reserva tu mesa</a>
+<a href="#menu" class="btn btn-outline">Ver menú</a>
+<a href="https://glovoapp.com/en/es/arucas/stores/cafe-bar-las-mesas-arucas" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Pedir en Glovo</a>
+<a href="https://www.ubereats.com/ch/store/pizzeria-hamburgueseria-las-mesas/RYJxfr4LSCegBiogjjkfTg?diningMode=DELIVERY&amp;ps=1&amp;surfaceName=" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Pedir con Uber Eats</a>
+</div>
+</div>
+</div>
+</section>
+
+<aside class="nv-banner" id="nvBanner" aria-label="Navidad en Las Mesas">
+<div class="nv-inner">
+<div><h2 id="nvTitulo">Navidad en Las Mesas</h2><p id="nvSub">Cenas de empresa, celebraciones y reservas para estas fiestas.</p></div>
+<div class="buttons"><a href="#contacto" class="btn btn-primary">Reserva tu mesa</a><a href="#celebraciones" class="btn btn-outline">Celebra con nosotros</a></div>
+</div>
+</aside>
+
+<section class="avisos-section" id="avisos" aria-labelledby="avisosTitle" hidden>
+<div class="container">
+<div class="section-label">Novedades</div>
+<h2 class="section-title" id="avisosTitle">Lo que pasa en Las Mesas.</h2>
+<div class="avisos-lista" id="avisosLista"></div>
+</div>
+</section>
+
+<section class="intro" id="nosotros">
+<div class="container intro-grid">
+<div class="intro-text">
+<div class="section-label">Nuestra esencia</div>
+<h2 class="section-title">Un lugar para quedarse un poco más.</h2>
+<p>En Las Mesas creemos que un buen café, una copa bien servida y una buena conversación pueden convertir cualquier día en un momento especial.</p>
+<p>Tardes entre amigos y noches que empiezan alrededor de una mesa.</p>
+<div class="intro-signature">Café & Bar</div>
+</div>
+</div>
+</section>
+
+<section class="local-section" id="local" aria-labelledby="localTitle">
+<div class="container local-grid">
+<div class="local-text">
+<div class="section-label">El local</div>
+<h2 class="section-title" id="localTitle">Una partida mientras llega la comida.</h2>
+<p>Mesa de billar, sitio de sobra y un salón pensado para pasar la tarde con los tuyos.</p>
+</div>
+<div class="local-photos">
+<button type="button" class="local-photo" data-full="imag/local-billar-1.webp" data-alt="Mesa de billar en el salón de Las Mesas Café Bar, con mesas de madera al fondo"><img src="imag/local-billar-1.webp" alt="Mesa de billar en el salón de Las Mesas Café Bar, con mesas de madera al fondo" width="896" height="1195" loading="lazy" decoding="async"></button>
+<button type="button" class="local-photo" data-full="imag/local-billar-2.webp" data-alt="Salón de Las Mesas con la mesa de billar y el mapa de las islas Canarias en la pared"><img src="imag/local-billar-2.webp" alt="Salón de Las Mesas con la mesa de billar y el mapa de las islas Canarias en la pared" width="896" height="1195" loading="lazy" decoding="async"></button>
+</div>
+</div>
+</section>
+
+<dialog class="photo-lightbox local-lb" id="localLb" aria-label="Foto del local"><div class="lb-inner"><img id="localLbImg" src="" alt=""></div><button type="button" class="lb-btn lb-close" id="localLbClose" aria-label="Cerrar foto">×</button></dialog>
+
+<section class="photos-section" aria-labelledby="photosTitle">
+<div class="container">
+<div class="photos-heading">
+<div><div class="section-label">De nuestra mesa</div><h2 class="section-title" id="photosTitle">Sabores para compartir.</h2></div>
+<p>Un vistazo a algunos sabores y momentos de Las Mesas.</p>
+</div>
+<div class="photo-carousel" role="region" aria-roledescription="carrusel" aria-label="Fotos de Las Mesas">
+<div class="photo-track" id="photoTrack" tabindex="0">
+<figure class="photo-card"><img src="imag/pizza-jamon-rucula.webp" alt="Pizza de jamón serrano, rúcula y tomates cherry" width="743" height="1000" loading="lazy" decoding="async"><figcaption class="photo-caption"><span>De la carta</span><strong>Pizza de jamón y rúcula</strong></figcaption></figure>
+<figure class="photo-card"><img src="imag/pizza-mariscos.webp" alt="Pizza de mariscos con langostinos, mejillones y palitos de cangrejo" width="743" height="1000" loading="lazy" decoding="async"><figcaption class="photo-caption"><span>De la carta</span><strong>Pizza de mariscos</strong></figcaption></figure>
+<figure class="photo-card"><img src="imag/pan-aceite.webp" alt="Pan de ajo recién horneado con aceite de oliva" width="645" height="768" loading="lazy" decoding="async"><figcaption class="photo-caption"><span>Recién horneado</span><strong>Pan de ajo</strong></figcaption></figure>
+<figure class="photo-card"><img src="imag/costillas-bbq.webp" alt="Costillas BBQ servidas con papas fritas y ensalada" width="743" height="1001" loading="lazy" decoding="async"><figcaption class="photo-caption"><span>De la carta</span><strong>Costilla a la BBQ</strong></figcaption></figure>
+<figure class="photo-card"><img src="imag/bebida-golosinas.webp" alt="Bebida fría de fruta con toppings dulces" width="743" height="1000" loading="lazy" decoding="async"><figcaption class="photo-caption"><span>Un momento dulce</span><strong>Algo refrescante</strong></figcaption></figure>
+</div>
+<button type="button" class="photo-nav prev" id="photoPrev" aria-label="Foto anterior">‹</button>
+<button type="button" class="photo-nav next" id="photoNext" aria-label="Foto siguiente">›</button>
+<div class="photo-dots" id="photoDots" aria-hidden="true"></div>
+</div>
+</div>
+</section>
+
+<section class="menu-section" id="menu">
+<div class="container">
+<div class="menu-header">
+<div>
+<div class="section-label">Nuestra carta</div>
+<h2 class="section-title">Carta café bar</h2>
+</div>
+<p>Elige una categoría para ver solo esa parte de la carta.</p>
+</div>
+
+<div class="carta-tabs" id="cartaTabs"></div>
+<section id="pedidoCarrito" class="pedido-carrito" aria-live="polite" hidden><div><strong id="pedidoMesa"></strong><span id="pedidoResumen">Tu pedido está vacío.</span></div><button type="button" id="verCarrito">Ver carrito (0 €)</button><div id="carritoDetalle" hidden></div></section>
+<div id="carta"></div>
+<div class="carta-legend">
+<p><strong>Alérgenos:</strong> G = gluten · H = huevo · L = leche/lácteos · P = pescado · CR = crustáceos · MO = moluscos · S = sulfitos · MZ = mostaza</p>
+<p>* Puede variar según la marca o receta de salsas, alioli, BBQ, rebozados y productos elaborados.</p>
+<p>La información de alérgenos es orientativa. Si tienes una alergia o intolerancia, avísanos antes de pedir y te confirmamos los ingredientes.</p>
+</div>
+<dialog class="allergen-dialog" id="allergenDialog" aria-labelledby="allergenTitle" aria-describedby="allergenDescription">
+<div class="allergen-dialog-inner">
+<h3 id="allergenTitle">Alérgenos</h3>
+<p id="allergenDescription"></p>
+<ul>
+<li><strong>G</strong>: gluten</li><li><strong>H</strong>: huevo</li><li><strong>L</strong>: leche y lácteos</li>
+<li><strong>P</strong>: pescado</li><li><strong>CR</strong>: crustáceos</li><li><strong>MO</strong>: moluscos</li><li><strong>MZ</strong>: mostaza</li><li><strong>S</strong>: sulfitos</li>
+</ul>
+<p>* Puede variar según la marca o receta de salsas, alioli, BBQ, rebozados y productos elaborados. Si tienes una alergia o intolerancia, consúltalo con nuestro equipo antes de pedir.</p>
+<form method="dialog"><button class="allergen-close">Cerrar</button></form>
+</div>
+</dialog>
+
+<div class="carta-acciones">
+<a class="btn" href="https://glovoapp.com/en/es/arucas/stores/cafe-bar-las-mesas-arucas" target="_blank" rel="noopener noreferrer">Pedir en Glovo</a>
+<a class="btn" href="https://www.ubereats.com/ch/store/pizzeria-hamburgueseria-las-mesas/RYJxfr4LSCegBiogjjkfTg?diningMode=DELIVERY&amp;ps=1&amp;surfaceName=" target="_blank" rel="noopener noreferrer">Pedir con Uber Eats</a>
+<a class="btn" href="imag/carta.webp" target="_blank" rel="noopener">Ver carta original</a>
+<a class="btn" href="imag/bebidas.webp" target="_blank" rel="noopener">Ver bebidas original</a>
+<a class="btn" href="imag/carta.pdf" download="Carta-Las-Mesas.pdf">Descargar PDF</a>
+</div>
+
+</div>
+</section>
+
+<section class="events-section" id="celebraciones" aria-labelledby="eventsTitle">
+<div class="container">
+<div class="section-label">Celebraciones</div>
+<h2 class="section-title" id="eventsTitle">Celebra con nosotros.</h2>
+<p class="events-intro">En Las Mesas se hacen celebraciones en el local. Cuéntanos qué quieres celebrar y lo preparamos contigo.</p>
+<div class="events-grid">
+<article class="event-card">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v9h14v-9M12 8v13M12 8C10 8 8 7 8 5.500S9.500 3.500 12 8zm0 0c2 0 4-1 4-2.500S14.500 3.500 12 8z"/></svg>
+<h3>Cumpleaños</h3>
+<p>Celebra tu día con familia y amigos en el local.</p>
+</article>
+<article class="event-card">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg>
+<h3>Cenas de empresa</h3>
+<p>Reúne al equipo en un ambiente diferente.</p>
+</article>
+<article class="event-card">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+<h3>Otros eventos</h3>
+<p>¿Tienes otra celebración en mente? Consúltanos y lo vemos juntos.</p>
+</article>
+</div>
+<div class="events-contact">
+<p class="nv-nota">🎄 ¿Cena de empresa o celebración de Navidad? Consulta las fechas disponibles.</p>
+<p>Para más información, contacta con nosotros:</p>
+<div class="buttons">
+<a href="tel:+34601163933" class="btn btn-primary">Llamar · 601 163 933</a>
+<a href="tel:+34646263298" class="btn btn-primary">Llamar · 646 263 298</a>
+<a href="https://wa.me/34601163933?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20hacer%20una%20celebraci%C3%B3n%20en%20Las%20Mesas." target="_blank" rel="noopener noreferrer" class="btn btn-outline">WhatsApp</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="reviews-section" id="resenas">
+<div class="container">
+<div class="reviews-header">
+<div><div class="section-label">Experiencias reales</div><h2 class="section-title">Lo que cuentan quienes nos visitan.</h2></div>
+<div class="reviews-summary"><strong class="reviews-stars" id="reviewsAvgStars" aria-label="Valoración media">☆☆☆☆☆</strong><span id="reviewsAvgText">Cargando opiniones…</span><a class="btn btn-outline google-review-link" href="https://g.page/r/Cce3hMXhVRpUEBM/review" target="_blank" rel="noopener noreferrer">Déjanos una reseña en Google</a></div>
+</div>
+<div class="reviews-grid">
+<div id="reviewsList" class="reviews-list" aria-live="polite"><p class="reviews-empty">Cargando opiniones…</p></div>
+<div class="review-form-wrap">
+<h3>Cuéntanos tu experiencia</h3>
+<p class="google-review-note">¿Quieres ayudarnos a que más personas nos encuentren? <a href="https://g.page/r/Cce3hMXhVRpUEBM/review" target="_blank" rel="noopener noreferrer">Déjanos también una reseña en Google</a>.</p>
+<form id="reviewForm">
+<div class="hp" aria-hidden="true"><label>No rellenar<input type="text" name="web" tabindex="-1" autocomplete="off"></label></div>
+<label>Tu nombre<input type="text" name="nombre" maxlength="60" autocomplete="name" required></label>
+<fieldset class="rating-field">
+<legend>Tu valoración</legend>
+<div class="star-input" id="starInput" role="group" aria-label="Elige de 1 a 5 estrellas">
+<button class="star" type="button" data-v="1" aria-label="1 estrella" aria-pressed="false">★</button><button class="star" type="button" data-v="2" aria-label="2 estrellas" aria-pressed="false">★</button><button class="star" type="button" data-v="3" aria-label="3 estrellas" aria-pressed="false">★</button><button class="star" type="button" data-v="4" aria-label="4 estrellas" aria-pressed="false">★</button><button class="star" type="button" data-v="5" aria-label="5 estrellas" aria-pressed="false">★</button>
+</div>
+<span id="ratingStatus" class="sr-only" aria-live="polite">Sin valoración seleccionada</span>
+</fieldset>
+<label>Tu opinión<textarea name="comentario" maxlength="1000" placeholder="¿Qué te gustó de tu visita?"></textarea></label>
+<div class="photo-field">
+<span class="photo-field-label">Fotos (opcional)</span>
+<input type="file" id="reviewPhotos" accept="image/*" multiple hidden>
+<button type="button" class="btn photo-add" id="reviewPhotoBtn">+ Añadir fotos</button>
+<div class="photo-previews" id="reviewPhotoPreviews"></div>
+<p class="review-form-note">Hasta 2 fotos de tu visita. Las revisamos antes de publicarlas.</p>
+</div>
+<button type="submit" class="btn btn-primary">Enviar opinión</button>
+<p id="reviewStatus" class="form-feedback" role="status" aria-live="polite"></p>
+<p class="review-form-note">Revisaremos tu opinión antes de publicarla.</p>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<section class="experience">
+<div class="experience-content">
+<div class="section-label">Las Mesas</div>
+<h2>Come despacio. <span>Ríe mucho.</span> Quédate.</h2>
+<p>Porque hay lugares a los que no vienes solamente por lo que hay en el plato. Vienes por cómo te hacen sentir.</p>
+</div>
+</section>
+
+<section class="contact" id="contacto">
+<div class="container contact-grid">
+
+<div class="contact-info">
+<div class="section-label">Hablemos</div>
+<h2 class="section-title">Reserva tu mesa.</h2>
+<p>¿Quieres venir a tomar algo o celebrar algo especial? Rellena el formulario y te confirmamos por WhatsApp.</p>
+
+<div class="contact-details">
+<div class="contact-item">
+<strong>Dirección</strong>
+<a href="https://www.google.com/maps/search/?api=1&query=Pintor+Antonio+Padr%C3%B3n+59+Las+Mesas+Bajas+Las+Palmas+de+Gran+Canaria" target="_blank" rel="noopener noreferrer">
+<span>Pintor Antonio Padrón, 59, Las Mesas Bajas<br>Las Palmas de Gran Canaria</span>
+</a>
+</div>
+<div class="contact-item">
+<strong>Teléfono</strong>
+<a href="tel:+34928896097"><span>+34 928 896 097</span></a>
+</div>
+<div class="contact-item">
+<strong>Horario</strong>
+<span>Lunes a viernes · 18:00 - 23:00<br>Sábado · 12:00 - 15:00 y 18:00 - 23:00<br>Domingo · 12:00 - 17:00</span>
+</div>
+</div>
+<div class="redes-bloque" hidden><strong>Síguenos</strong><div class="redes"></div></div>
+</div>
+
+<form id="reservaForm">
+<div class="hp" aria-hidden="true"><label>No rellenar<input type="text" name="web" tabindex="-1" autocomplete="off"></label></div>
+<div class="form-row">
+<label>Nombre
+<input type="text" name="nombre" maxlength="60" autocomplete="name" required>
+</label>
+<label>Teléfono
+<input type="tel" name="telefono" maxlength="30" autocomplete="tel" required>
+</label>
+</div>
+<div class="form-row">
+<label>Fecha
+<input type="date" name="fecha" id="fecha" required>
+</label>
+<label>Hora
+<input type="time" name="hora" id="hora" min="12:00" max="22:30" required>
+</label>
+</div>
+<p class="hora-nota" id="horaNota">Elige una fecha y te mostramos las horas disponibles para reservar.</p>
+<label>Personas
+<input type="number" name="personas" min="1" max="20" value="2" required>
+</label>
+<label>Comentarios (opcional)
+<textarea name="mensaje" maxlength="1000" placeholder="Cumpleaños, terraza, alergias..."></textarea>
+</label>
+<button type="submit" class="btn btn-primary">Reservar por WhatsApp</button>
+<p class="nv-nota form">🎄 ¿Cena de Navidad con amigos o familia? Reserva con antelación.</p>
+<p id="reservaStatus" class="form-feedback" role="status" aria-live="polite"></p>
+<p class="form-note">Se abrirá WhatsApp con tu solicitud lista para enviar.</p>
+</form>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+<p class="nv-nota nv-foot">🎄 ¡Felices fiestas! Gracias por celebrarlas con nosotros.</p>
+<div class="redes-bloque" hidden><div class="redes"></div></div>
+© 2026 <strong>LAS MESAS</strong> · Café & Bar · Gran Canaria · <button type="button" class="cookie-config" id="cookieConfig">Configurar cookies</button></footer>
+
+<script>
+// Número de WhatsApp que recibirá las reservas: código de país + móvil, sin "+" ni espacios.
+window.WHATSAPP = "34601163933";
+const WHATSAPP = window.WHATSAPP;
+
+const CARTA = [
+["Hamburguesas","Hamburguesas de carne",null,[
+["La suprema","Queso, huevo, bacon, tomate natural, cebolla y 3 salsas","G* H L S*","6,50"],
+["La tradicional","Queso, cebolla y 3 salsas","G* L S*","3,60"],
+["Burger Pizza","Hamburguesa de carne, huevo frito, bacon, queso, lechuga, tomate natural, cebolla, rúcula y salsa cheddar","G H L S","14,80"]]],
+["Hamburguesas","Hamburguesas de Pollo crujiente",null,[
+["La súper","Queso, huevo, bacon, tomate natural, cebolla y 3 salsas","G* H L S*","6,50"],
+["La simple","Queso, cebolla y 3 salsas","G L S","3,60"]]],
+["Perritos","Perritos",null,[
+["Perrito súper","Queso, jamón, cebolla y 3 salsas","G* L S*","3,40"],
+["Perrito normal","Cebolla y 3 salsas","G* S*","3,00"]]],
+["Pan de ajo", "Pan de ajo hecho con masa de pizza", null, [
+  ["Normal", "Pan de ajo hecho con masa de pizza", "G", "4,80"],
+  ["Queso", "Pan de ajo hecho con masa de pizza", "G L", "6,30"],
+  ["Jamón y queso", "Pan de ajo hecho con masa de pizza", "G L", "7,80"],
+]],
+["Papas","Papas","Extras: cebolla 0,50 € · huevo 0,50 € · jamón 1,10 € · queso 1,10 € · pollo 1,70 € · salchicha 1,70 € · atún 1,80 € · ternera 1,80 € · lomo 1,80 € (alérgenos: H · L · P)",[
+["Cono de papas","Papas fritas","","1,85"],
+["Pequeña","Papas fritas","","3,00"],
+["Grande","Papas fritas","","4,20"]]],
+["Combinados","Platos combinados","Los platos combinados se sirven con papas fritas y ensalada fresca.",[
+["Alitas de pollo al chipotle","6 unidades","S*","10,00"],
+["Nuggets de pollo premium","10 unidades","G H* L*","7,50"],
+["Lágrimas de pollo crispy","Pollo crujiente","G H* L*","7,50"],
+["Fingers de pollo","6 unidades","G H* L*","9,00"],
+["Brochetas de pollo","3 brochetas","","9,00"],
+["Croquetas de pollo o atún","8 unidades","G* H* L* P*","9,50"],
+["Costilla a la BBQ","550 g","S* MZ*","15,95"],
+["Codillo asado","600 g","","15,95"]]],
+["Bocadillos","Bocadillos calientes","Todos los bocadillos se sirven con pan de bombón.",[
+["El ternera crack","Cebolla, tomate natural, queso, huevo y alioli","G H L MZ*","4,80"],
+["El ternera simple","Cebolla, queso y alioli","G L MZ*","4,20"],
+["La bomba avícola","Cebolla, tomate natural, queso, huevo y alioli","G H L MZ*","4,20"],
+["El pollo simple","Cebolla, queso y alioli","G L MZ*","3,70"],
+["El lomo goloso","Cebolla, tomate natural, queso, huevo y alioli","G H L MZ*","4,50"],
+["El lomo simple","Cebolla, queso y alioli","G L MZ*","3,90"]]],
+["Sándwiches","Sándwiches calientes",null,[
+["Jamón y queso","Jamón y queso","G L","2,90"],
+["El de atún","Atún, cebolla, tomate natural, queso, huevo y alioli","G H L P MZ*","3,50"],
+["El de pollo","Cebolla, tomate natural, queso, huevo y alioli","G H L MZ*","3,80"],
+["El de ternera","Cebolla, tomate natural, huevo, queso y alioli","G H L MZ*","4,20"],
+["El de lomo","Cebolla, tomate natural, queso, huevo y alioli","G H L MZ*","3,90"]]],
+["Pizzas","Pizzas",null,[
+["La bella serrana","Tomate, mozzarella, jamón serrano, rúcula, aceite de oliva y tomate cherry","G L","11,50"],
+["La tradicional","Tomate, mozzarella, champiñones, jamón y aceitunas","G L","10,30"],
+["La parrillera","Tomate, mozzarella, champiñones, pimiento, cebolla, pollo y ternera","G L","11,00"],
+["La simple","Tomate, mozzarella, ajo y tomate natural","G L","10,00"],
+["La delicia","Tomate, mozzarella, atún y aceitunas","G L P","10,30"],
+["Mar azul","Tomate, mozzarella, atún, cangrejo, mejillones y gambas","G L P CR MO","12,90"],
+["La ranchera","BBQ, mozzarella, ternera, cebolla y salchicha","G L S* MZ*","10,80"],
+["Venecia","Tomate, mozzarella, jamón y bacon","G L","10,50"]]],
+["Bebidas","Cafés e infusiones",null,[
+["Café","","","1,00"],
+["Cortado corto","","","1,10"],
+["Cortado largo","","","1,20"],
+["Leche y leche corto","","","1,30"],
+["Leche y leche largo","","","1,40"],
+["Café con leche","","","1,40"],
+["Chocolate","","","1,50"],
+["Infusiones","","","1,20"],
+["Cortado vaso","","","2,00"]]],
+["Bebidas","Refrescos, aguas y zumos",null,[
+["Coca-Cola","","","2,00"],
+["Sprite","","","1,50"],
+["Fanta limón","","","1,50"],
+["Fanta naranja","","","1,50"],
+["Tónica","","","1,50"],
+["Agua pequeña","","","1,50"],
+["Agua grande","","","2,00"],
+["Energética","","","1,40"],
+["Zumos","","","1,80"],
+["Zumo naranja","","","3,20"],
+["Red Bull","","","2,40"],
+["Vaso de agua","","","0,30"]]],
+["Bebidas","Cervezas",null,[
+["Tropical","","","1,40"],
+["Tropical limón","","","1,50"],
+["Botellín Tropical","","","1,20"],
+["Dorada sin","","","1,40"],
+["Dorada normal","","","1,80"],
+["Dorada especial","","","1,80"],
+["Estrella","","","1,30"],
+["Estrella mini","","","1,00"],
+["1906","","","2,90"],
+["Corona","","","3,00"]]],
+["Bebidas","Licores y destilados",null,[
+["Ron blanco / oro","","","1,50"],
+["Ginebra","","","3,00"],
+["Whisky","","","2,00"],
+["Coñac","","","1,50"],
+["Amaretto","","","3,80"],
+["Frangelico","","","3,80"],
+["Tía María","","","3,80"],
+["Baileys","","","3,80"],
+["Marie Brizard","","","2,80"],
+["Chinchón dulce","","","1,50"],
+["Vodka","","","2,00"],
+["Santa Teresa","","","3,00"],
+["Malibú","","","3,00"],
+["Tequila","","","3,00"],
+["Etiqueta negra","","","3,50"],
+["Etiqueta roja","","","2,00"],
+["Cardhu","","","5,50"],
+["Jack Daniel's","","","4,50"]]],
+["Bebidas","Vinos",null,[
+["Viña Lobón","","","8,00","1,50"],
+["Mala Bestia","","","9,00","2,00"],
+["Palacio de Beltús","","","9,00","2,00"],
+["Conde de Basalu","","","9,00","2,00"],
+["Luis Caña","","","24,00",""],
+["Despecho","","","18,00",""],
+["Azpilicueta","","","27,00",""],
+["Esencia 27","","","18,00",""],
+["Iniesta","","","18,00",""],
+["Dulce Malicia","","","24,00",""]]]
+];
+
+const carta = document.getElementById("carta");
+const tabs = document.getElementById("cartaTabs");
+const allergenDialog = document.getElementById("allergenDialog");
+const allergenDescription = document.getElementById("allergenDescription");
+const fila = ([n, d, a, p, c], mostrarInfo = true) => {
+  const codigo = a ? a.split(" ").join(" · ") : "Sin alérgenos indicados en la ficha; consulta al equipo antes de pedir.";
+  const info = mostrarInfo
+    ? `<div class="plato-info"><small>${codigo}</small><button class="info-allergen" type="button" aria-label="Información de alérgenos para ${n}" aria-haspopup="dialog" data-plato="${n}" data-alergenos="${a}">i</button></div>`
+    : (a ? `<div class="plato-info"><small>${a.split(" ").join(" · ")}</small></div>` : "");
+  const visual = n === "La súper"
+    ? '<figure class="plato-foto"><img src="imag/la-super.webp" alt="La súper, hamburguesa de pollo crujiente con queso, huevo frito, bacon, tomate y lechuga" width="240" height="320" loading="lazy" decoding="async"><figcaption>Hamburguesas · La súper</figcaption></figure>'
+    : n === "Burger Pizza"
+    ? '<figure class="plato-foto"><img src="imag/burger-pizza.webp" alt="Burger Pizza cortada por la mitad, con carne, queso y otros ingredientes" width="240" height="434" loading="lazy" decoding="async"><figcaption>Hamburguesas · Burger Pizza</figcaption></figure>'
+    : n === "El ternera crack"
+      ? '<figure class="plato-foto"><img src="imag/el-ternera-crack.webp" alt="Bocadillo El ternera crack con carne de ternera, queso, huevo, tomate y cebolla" width="900" height="1211" loading="lazy" decoding="async"><figcaption>Bocadillos · El ternera crack</figcaption></figure>'
+      : n === "La bomba avícola"
+        ? '<figure class="plato-foto"><img src="imag/la-bomba-avicola.webp" alt="Bocadillo La bomba avícola con pollo, queso, huevo, tomate y cebolla" width="900" height="1212" loading="lazy" decoding="async"><figcaption>Bocadillos · La bomba avícola</figcaption></figure>'
+        : n === "Jamón y queso" && d === "Pan de ajo hecho con masa de pizza"
+      ? '<figure class="plato-foto"><img src="imag/pan-ajo-pizza-jamon-queso.webp" alt="Pan de ajo hecho con masa de pizza, jamón y queso gratinado" width="320" height="240" loading="lazy" decoding="async"><figcaption>Pan de ajo · masa de pizza · jamón y queso</figcaption></figure>'
+      : n === "Mar azul"
+        ? '<figure class="plato-foto"><img src="imag/pizza-mar-azul.webp" alt="Pizza Mar azul con gambas, mejillones y otros ingredientes del mar" width="240" height="323" loading="lazy" decoding="async"><figcaption>Pizzas · Mar azul</figcaption></figure>'
+        : n === "La bella serrana"
+          ? '<figure class="plato-foto"><img src="imag/pizza-bella-serrana.webp" alt="Pizza La bella serrana con jamón serrano, rúcula y tomate cherry" width="240" height="240" loading="lazy" decoding="async"><figcaption>Pizzas · La bella serrana</figcaption></figure>'
+          : n === "La parrillera"
+            ? '<figure class="plato-foto"><img src="imag/pizza-parrillera.webp" alt="Pizza La parrillera con champiñones, pimiento, cebolla, pollo y ternera" width="240" height="240" loading="lazy" decoding="async"><figcaption>Pizzas · La parrillera</figcaption></figure>'
+            : n === "Brochetas de pollo"
+              ? '<figure class="plato-foto"><img src="imag/brochetas-pollo.webp" alt="Brochetas de pollo con papas fritas y ensalada" width="320" height="240" loading="lazy" decoding="async"><figcaption>Combinados · Brochetas de pollo</figcaption></figure>'
+              : n === "El pollo simple"
+                ? '<figure class="plato-foto"><img src="imag/bocadillo-pollo-simple.webp" alt="Bocadillo simple de pollo con queso fundido, cebolla y alioli en pan de bombón" width="240" height="320" loading="lazy" decoding="async"><figcaption>Bocadillos · El pollo simple</figcaption></figure>'
+                : "";
+  const destacado = visual ? " destacado" : "";
+  const ingredientes = /calabaza/i.test(d) ? `<span class="plato-ingrediente"><span aria-hidden="true">🎃</span> Calabaza</span>` : /picante|chile|guindilla/i.test(d) ? `<span class="plato-ingrediente"><span aria-hidden="true">🌶️</span> Picante</span>` : "";
+  const precioNum = Number(String(p).replace(",", "."));
+  return `<li class="plato${destacado}">${visual}<div class="plato-detalle"><h4>${n}</h4>${d ? `<p>${d}</p>` : ""}${ingredientes}${info}</div>${c !== undefined ? `<span class="precio doble">${c ? `<span>Copa <b>${c} €</b></span>` : ""}<span>Botella <b>${p} €</b></span></span>` : `<span class="precio">${p} €</span>`}${Number.isFinite(precioNum) ? `<button class="plato-add" type="button" data-producto="${n}" data-precio="${precioNum}">Añadir</button>` : ""}</li>`;
+};
+const mesaQR=Number(new URLSearchParams(location.search).get("mesa"));
+const mesaValida=Number.isInteger(mesaQR)&&mesaQR>=1&&mesaQR<=8;
+const pedido=new Map(), carrito=document.getElementById("pedidoCarrito"), detalle=document.getElementById("carritoDetalle");
+const formatoEUR=n=>n.toLocaleString("es-ES",{style:"currency",currency:"EUR"});
+function renderPedido(){const items=[...pedido.values()],total=items.reduce((s,x)=>s+x.precio*x.cantidad,0);document.getElementById("pedidoResumen").textContent=items.length?`${items.reduce((s,x)=>s+x.cantidad,0)} producto(s) en el pedido`:"Tu pedido está vacío.";document.getElementById("verCarrito").textContent=`Ver carrito (${formatoEUR(total)})`;detalle.innerHTML=items.map(x=>`<div class="carrito-linea"><span>${x.nombre} × ${x.cantidad} · ${formatoEUR(x.precio*x.cantidad)}</span><span><button type="button" data-qty="-1" data-name="${x.nombre}">−</button> <button type="button" data-qty="1" data-name="${x.nombre}">+</button></span></div>`).join("")+(items.length?`<div class="carrito-total">Total: ${formatoEUR(total)}</div>`:"");}
+if(mesaValida){carrito.hidden=false;document.getElementById("pedidoMesa").textContent=`Pedido para la mesa ${mesaQR}`;}
+document.getElementById("verCarrito").addEventListener("click",()=>detalle.hidden=!detalle.hidden);
+document.addEventListener("click",e=>{const b=e.target.closest(".plato-add");if(b){if(!mesaValida){alert("Escanea el QR de una mesa para iniciar un pedido.");return;}const n=b.dataset.producto,x=pedido.get(n)||{nombre:n,precio:Number(b.dataset.precio),cantidad:0};x.cantidad++;pedido.set(n,x);renderPedido();return;}const q=e.target.closest("[data-qty]");if(q){const x=pedido.get(q.dataset.name);x.cantidad+=Number(q.dataset.qty);if(x.cantidad<1)pedido.delete(q.dataset.name);renderPedido();}});
+// La carta y las pestañas se pintan cuando el navegador tiene un hueco libre,
+// en dos tandas separadas, para no acaparar el procesador justo al cargar
+// la página (esto reduce el "Total Blocking Time" sobre todo en móvil).
+const enTiempoLibre = fn => {
+  if ("requestIdleCallback" in window) window.requestIdleCallback(fn, { timeout: 1000 });
+  else window.setTimeout(fn, 1);
+};
+
+// Se pinta una categoría por tanda, cediendo el hilo principal entre cada
+// una, para que ninguna tarea sea lo bastante larga como para contar como
+// bloqueo (esto es lo que más pesa en el "Total Blocking Time" en móvil).
+function pintarCartaPorLotes(categorias, contenedor, indice = 0) {
+  if (indice >= categorias.length) return;
+  const [t, titulo, nota, platos] = categorias[indice];
+  const div = document.createElement("div");
+  div.className = "cat" + (t === "Bebidas" ? " compacta" : "");
+  div.dataset.tab = t;
+  div.innerHTML = `<h3>${titulo}</h3>${nota ? `<p class="cat-note">${nota}</p>` : ""}<ul>${platos.map(plato => fila(plato, t !== "Bebidas" && t !== "Papas")).join("")}</ul>`;
+  const activo = tabs.querySelector('.chip[aria-pressed="true"]');
+  if (activo && activo.dataset.t !== "Todo" && activo.dataset.t !== t) div.hidden = true;
+  contenedor.appendChild(div);
+  enTiempoLibre(() => pintarCartaPorLotes(categorias, contenedor, indice + 1));
+}
+enTiempoLibre(() => {
+  pintarCartaPorLotes(CARTA, carta);
+  carta.addEventListener("click", e => {
+    const button = e.target.closest(".info-allergen");
+    if (!button) return;
+    const codigos = button.dataset.alergenos;
+    allergenDescription.textContent = codigos
+      ? `${button.dataset.plato}: códigos indicados: ${codigos.split(" ").join(" · ")}.`
+      : `${button.dataset.plato}: no hay alérgenos indicados en la ficha del producto. Consulta al equipo antes de pedir, especialmente si tienes una alergia o intolerancia.`;
+    allergenDialog.showModal();
+  });
+});
+
+// Iconos por categoría (SVG de línea, sin dependencias)
+const ICONOS_CARTA = {
+  Todo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3.500" y="3.500" width="7" height="7" rx="2"/><rect x="13.500" y="3.500" width="7" height="7" rx="2"/><rect x="3.500" y="13.500" width="7" height="7" rx="2"/><rect x="13.500" y="13.500" width="7" height="7" rx="2"/></svg>',
+  Hamburguesas: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4.500 11a7.500 6.500 0 0 1 15 0z"/><path d="M3.500 14.500c1.500 1.300 3 1.300 4.500 0s3-1.300 4.500 0 3 1.300 4.500 0 2.500-1 3.500 0"/><path d="M4.500 17.500h15a0 0 0 0 1 0 0 3 3 0 0 1-3 3h-9a3 3 0 0 1-3-3z"/></svg>',
+  Perritos: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><g transform="rotate(-30 12 12)"><rect x="2" y="8.500" width="20" height="7" rx="3.500"/><rect x="4.500" y="10.500" width="15" height="3" rx="1.500"/></g></svg>',
+  "Pan de ajo": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 21c-4 0-7-2.500-7-6 0-3 2-5 4-6.500C10 7.500 11 6 12 4c1 2 2 3.500 3 4.500 2 1.500 4 3.500 4 6.500 0 3.500-3 6-7 6z"/><path d="M12 4V2.500"/><path d="M12 21c-2-1.500-3-3.500-3-6M12 21c2-1.500 3-3.500 3-6"/></svg>',
+  Papas: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5.500 9.500h13l-1.500 11.500H7z"/><path d="M8.500 9.500L8 3.500M12 9.500V3M15.500 9.500L16 3.500"/></svg>',
+  Combinados: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="15" cy="9" r="5.500"/><path d="M11.200 12.800L6 18"/><circle cx="4.800" cy="16.500" r="1.700"/><circle cx="7.500" cy="19.200" r="1.700"/></svg>',
+  Bocadillos: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><g transform="rotate(-45 12 12)"><rect x="1.500" y="8" width="21" height="8" rx="4"/><path d="M8 10.500l1 3M12 10.500l1 3M16 10.500l1 3"/></g></svg>',
+  "Sándwiches": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M3 18.500l9-13.500 9 13.500z"/><path d="M6.500 13.500h11"/><path d="M8.500 10.500h7"/></svg>',
+  Pizzas: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 21.500L4 7.500c5.500-2.500 10.500-2.500 16 0z"/><path d="M4.500 8.500c4.500-1.700 10.500-1.700 15 0"/><circle cx="10.200" cy="11.500" r="1.200"/><circle cx="14" cy="10.500" r="1.200"/><circle cx="12" cy="15.500" r="1.200"/></svg>',
+  Bebidas: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M6 8.500h12l-1.500 12.500h-9z"/><path d="M5 8.500h14"/><path d="M7 13.500h10"/><path d="M13 8.500l1.500-5.500H17"/></svg>'
+};
+enTiempoLibre(() => {
+  tabs.innerHTML = ["Todo", ...new Set(CARTA.map(c => c[0]))].map((c, i) =>
+    `<button class="chip" type="button" aria-pressed="${i === 0}" data-t="${c}" title="${c}" aria-label="${c}">${ICONOS_CARTA[c] ? `<span aria-hidden="true">${ICONOS_CARTA[c]}</span>` : ""}<span class="sr-only">${c}</span></button>`).join("");
+  tabs.addEventListener("click", e => {
+    const b = e.target.closest(".chip");
+    if (!b) return;
+    tabs.querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", x === b));
+    carta.querySelectorAll(".cat").forEach(c => c.hidden = b.dataset.t !== "Todo" && c.dataset.tab !== b.dataset.t);
+    // El scroll se retrasa un frame: leerlo justo después de ocultar/mostrar
+    // categorías es lo que forzaba un recálculo de layout ("forced reflow").
+    requestAnimationFrame(() => {
+      document.getElementById("menu").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+});
+
+// Redes sociales: pega aquí los enlaces completos. Las que dejes vacías no aparecen.
+const REDES = {
+  instagram: "https://www.instagram.com/lasmesascafebar/",
+  facebook: "",   // ej: "https://www.facebook.com/tu_pagina"
+  tiktok: "https://www.tiktok.com/@lasmesascafebar",
+  whatsapp: ""    // si lo dejas vacío, usa el número de WHATSAPP de arriba
+};
+const ICONOS = {
+  instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/>',
+  facebook: '<path d="M15 3h-2.5A4.5 4.5 0 0 0 8 7.5V10H5v4h3v7h4v-7h3l1-4h-4V7.5c0-.3.2-.5.5-.5H15z"/>',
+  tiktok: '<path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.3 2.5 2 4.2 5 4.4"/>',
+  whatsapp: '<path d="M3 21l1.6-4.6A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 8.5c0 3.5 3 6.5 6.500 6.500l1-1.500-2-1-.8.8c-1-.4-2-1.400-2.400-2.400l.8-.8-1-2L9 8.500z"/>'
+};
+const NOMBRES = { instagram: "Instagram", facebook: "Facebook", tiktok: "TikTok", whatsapp: "WhatsApp" };
+const enlaces = { ...REDES };
+if (!enlaces.whatsapp) enlaces.whatsapp = "https://wa.me/" + WHATSAPP;
+const redesHTML = Object.entries(enlaces).filter(([k, u]) => u).map(([k, u]) =>
+  `<a class="red" href="${u}" target="_blank" rel="noopener noreferrer" aria-label="${NOMBRES[k]}"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONOS[k]}</svg></a>`).join("");
+if (redesHTML) document.querySelectorAll(".redes-bloque").forEach(b => { b.querySelector(".redes").innerHTML = redesHTML; b.hidden = false; });
+
+const header = document.getElementById("header");
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+const setMenu = abierto => {
+  navLinks.classList.toggle("active", abierto);
+  menuToggle.setAttribute("aria-expanded", abierto);
+  menuToggle.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
+};
+menuToggle.addEventListener("click", () => setMenu(!navLinks.classList.contains("active")));
+navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && navLinks.classList.contains("active")) {
+    setMenu(false);
+    menuToggle.focus();
+  }
+});
+
+let scrollProgramado = false;
+function onScroll() {
+  if (scrollProgramado) return;
+  scrollProgramado = true;
+  requestAnimationFrame(() => {
+    header.classList.toggle("scrolled", window.scrollY > 40);
+    scrollProgramado = false;
+  });
+}
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
+
+const hoy = new Date();
+hoy.setMinutes(hoy.getMinutes() - hoy.getTimezoneOffset());
+document.getElementById("fecha").min = hoy.toISOString().split("T")[0];
+// Horas de reserva según el día: último turno 30 min antes del cierre.
+(function(){
+  var fecha=document.getElementById("fecha"), hora=document.getElementById("hora"), nota=document.getElementById("horaNota");
+  if(!fecha||!hora||!nota) return;
+  function rangos(iso){
+    var p=iso.split("-").map(Number);
+    var d=new Date(Date.UTC(p[0],p[1]-1,p[2])).getUTCDay();
+    if(d===0) return [["12:00","16:30"]];
+    if(d===6) return [["12:00","14:30"],["18:00","22:30"]];
+    return [["18:00","22:30"]];
+  }
+  function validarHora(){
+    if(!fecha.value||!hora.value){hora.setCustomValidity("");return;}
+    var permitido=rangos(fecha.value).some(function(r){return hora.value>=r[0]&&hora.value<=r[1];});
+    hora.setCustomValidity(permitido?"":"Elige una hora dentro de uno de los turnos de apertura.");
+  }
+  function actualizar(){
+    if(!fecha.value) return;
+    var r=rangos(fecha.value);
+    hora.min=r[0][0]; hora.max=r[r.length-1][1];
+    nota.textContent="Reservas disponibles: "+r.map(function(x){return x[0]+"–"+x[1];}).join(" y ")+" (última hora de reserva).";
+    if(hora.value&&!r.some(function(x){return hora.value>=x[0]&&hora.value<=x[1];})) hora.value="";
+    validarHora();
+  }
+  fecha.addEventListener("change",actualizar);
+  hora.addEventListener("input",validarHora);
+  hora.addEventListener("change",validarHora);
+})();
+
+// El envío de reservas y opiniones (guardar en Apps Script + abrir WhatsApp) se gestiona en app.js
+</script>
+<script type="module" src="app.js"></script>
+<div class="floating-actions" id="floatingActions" aria-label="Accesos rápidos">
+<div class="floating-hours" role="status" aria-label="Horario: lunes a viernes de 18:00 a 23:00, sábados de 12:00 a 15:00 y de 18:00 a 23:00, domingos de 12:00 a 17:00"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><strong>Horario</strong><small id="floatingToday">Lun–Vie · 18:00–23:00</small><small class="floating-status" aria-live="polite"><i class="floating-dot cerrado" id="floatingStatusDot" aria-hidden="true"></i><span id="floatingStatusText">Cerrado</span></small></span></div>
+<a class="floating-call" id="floatingCall" href="tel:+34928896097" aria-label="Llamar a Las Mesas Café & Bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Llamar</span></a>
+<a class="floating-location" href="https://www.google.com/maps/search/?api=1&amp;query=Pintor+Antonio+Padr%C3%B3n+59+Las+Mesas+Bajas+Las+Palmas+de+Gran+Canaria" target="_blank" rel="noopener noreferrer" aria-label="Cómo llegar a Las Mesas en Google Maps"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Cómo llegar</span></a>
+</div>
+<script>
+(function(){
+  // Horario por día (0 = domingo). Cierre 24 = medianoche.
+  var HORARIO={0:[[12,17]],1:[[18,23]],2:[[18,23]],3:[[18,23]],4:[[18,23]],5:[[18,23]],6:[[12,15],[18,23]]};
+  // Días especiales (festivos): fecha AAAA-MM-DD en hora de Canarias. Se aplican solo ese día.
+  var EXCEPCIONES={"2026-11-02":{tramos:[[12,23]],nota:"Hoy lunes es festivo: abrimos de 12:00 a 23:00"}};
+  var DIAS={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+  function hh(n){return (n%24<10?"0":"")+(n%24)+":00";}
+  try{
+    var p=new Intl.DateTimeFormat("en-US",{timeZone:"Atlantic/Canary",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date());
+    var dia=0,hora=0,min=0;
+    p.forEach(function(x){if(x.type==="weekday")dia=DIAS[x.value];if(x.type==="hour")hora=+x.value%24;if(x.type==="minute")min=+x.value;});
+    var fecha=new Intl.DateTimeFormat("en-CA",{timeZone:"Atlantic/Canary",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+    var exc=EXCEPCIONES[fecha];
+    var t=hora+min/60, hoy=exc?exc.tramos:HORARIO[dia];
+    var tramo=hoy.find(function(r){return t>=r[0]&&t<r[1];});
+    var siguiente=hoy.find(function(r){return t<r[0];});
+    var abierto=!!tramo, corto, largo;
+    if(abierto){ corto="Abierto · cierra a las "+hh(tramo[1]); largo="Abierto ahora · hasta las "+hh(tramo[1]); }
+    else if(siguiente){ corto="Cerrado · abre hoy a las "+hh(siguiente[0]); largo="Cerrado ahora · abrimos hoy a las "+hh(siguiente[0]); }
+    else { var manana=HORARIO[(dia+1)%7][0][0]; corto="Cerrado · abre mañana a las "+hh(manana); largo="Cerrado ahora · abrimos mañana a las "+hh(manana); }
+    var el=document.getElementById("estado-abierto");
+    if(el){
+      el.querySelector(".quick-status-text").textContent=largo;
+      el.classList.toggle("cerrado",!abierto);
+      el.hidden=false;
+    }
+    var floatingText=document.getElementById("floatingStatusText");
+    var floatingDot=document.getElementById("floatingStatusDot");
+    var floatingToday=document.getElementById("floatingToday");
+    var avisoFestivo=document.getElementById("aviso-festivo");
+    if(exc&&avisoFestivo){avisoFestivo.textContent=exc.nota;avisoFestivo.hidden=false;}
+    if(floatingToday) floatingToday.textContent=(exc?"Hoy festivo · ":"Hoy · ")+hoy.map(function(r){return hh(r[0])+"–"+hh(r[1]);}).join(" · ");
+    if(floatingText&&floatingDot){floatingText.textContent=corto;floatingDot.classList.toggle("abierto",abierto);floatingDot.classList.toggle("cerrado",!abierto);}
+  }catch(e){}
+})();
+</script>
+<script>
+(function(){
+  var button=document.getElementById("floatingActions");
+  var menu=document.getElementById("menu");
+  if(!button||!menu||!("IntersectionObserver" in window)) return;
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){button.classList.toggle("oculto",entry.isIntersecting);});
+  },{threshold:0});
+  observer.observe(menu);
+})();
+</script>
+<script>
+(function(){
+  var dlg=document.getElementById("localLb");
+  if(!dlg||typeof dlg.showModal!=="function") return;
+  var img=document.getElementById("localLbImg");
+  document.querySelectorAll(".local-photo").forEach(function(b){
+    b.addEventListener("click",function(){img.src=b.getAttribute("data-full");img.alt=b.getAttribute("data-alt")||"";dlg.showModal();});
+  });
+  document.getElementById("localLbClose").addEventListener("click",function(){dlg.close();});
+  dlg.addEventListener("click",function(e){if(e.target===dlg||e.target.classList.contains("lb-inner"))dlg.close();});
+})();
+</script>
+<script>
+(function(){
+  if(!window.NAVIDAD) return;
+  var t=window.NAVIDAD.hoy.split("-").map(Number);
+  var hoy=Date.UTC(t[0],t[1]-1,t[2]);
+  var tit=document.getElementById("nvTitulo");
+  if(!tit) return;
+  var dias=Math.round((Date.UTC(t[0],11,24)-hoy)/864e5);
+  if(t[1]===12&&dias>1) tit.textContent="Faltan "+dias+" días para Nochebuena";
+  else if(t[1]===12&&dias===1) tit.textContent="¡Mañana es Nochebuena!";
+  else if(t[1]===12&&dias===0) tit.textContent="¡Hoy es Nochebuena!";
+  else if(t[1]===12&&t[2]===25) tit.textContent="¡Feliz Navidad!";
+  else if(t[1]===12) tit.textContent="Felices fiestas desde Las Mesas";
+  else if(t[1]===1&&t[2]<=5) tit.textContent="¡Feliz Año Nuevo!";
+  else if(t[1]===1) tit.textContent="Reyes Magos en Las Mesas";
+})();
+</script>
+<script>
+(function(){
+  var pantalla=document.getElementById("nvBienvenida");
+  if(!pantalla||!window.NAVIDAD) return;
+  pantalla.hidden=false;
+  var cerrar=function(){
+    if(document.documentElement.classList.contains("nv-bienvenida-fin")) return;
+    document.documentElement.classList.add("nv-bienvenida-fin");
+    pantalla.classList.add("cerrando");
+    window.setTimeout(function(){pantalla.hidden=true;document.body.style.overflow="";},850);
+  };
+  document.getElementById("nvBienvenidaSaltar").addEventListener("click",cerrar);
+  window.setTimeout(function(){pantalla.classList.add("abriendo");},450);
+  window.setTimeout(cerrar,3900);
+})();
+</script>
+</body>
+</html>
+
